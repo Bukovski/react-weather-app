@@ -12,4 +12,4 @@ cd react-weather-app
 npm install
 npm run start
 ```
-
+- icon font and CSS [weather-icons](https://erikflowers.github.io/weather-icons/)

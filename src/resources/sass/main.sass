@@ -27,20 +27,90 @@ body textarea:required:valid
 
 html, body
 	height: 100%
+	font-size: var(--font-size-base)
 
 body
-	font-size: 16px
 	min-width: 320px
 	position: relative
 	line-height: 1.75
-	font-family: $default-font
+	font-family: var(--font-body)
+	background-color: var(--color-bg)
+	color: var(--color-text)
 	overflow-x: hidden
 	opacity: 1
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
 
-//.img
-//	width: 300px
+
+.main
+	display: flex
+	flex-direction: column
+	flex-wrap: nowrap
+	
+	max-height: 100vh
+	max-width: 550px
+	margin: 0 auto
+
+/*=============== GEO ===============*/
+
+.geo
+	display: flex
+	flex-wrap: nowrap
+	justify-content: space-around
+	
+	margin-top: 27px
+	font-size: 2rem
+	letter-spacing: -0.05rem
+	
+	&__location
+		padding-left: 6px
+		
+	&__date
+		padding-top: 5px
+
+/*=============== TEMPERATURE ===============*/
+
+.temperature
+	display: flex
+	flex-wrap: nowrap
+	
+	margin-top: 2.7rem
+	margin-left: 6.3rem
+	
+	&__deg
+		letter-spacing: -1.65rem
+		line-height: 1.2
+		font-family: var(--font-big)
+		font-size: 23rem
+		
+	&__wrap
+		margin-left: 1.5rem
+		
+	&__mesure
+		font-size: 4.5rem
+		
+	&__box
+		margin-top: 4.2rem
+		margin-left: 0.7rem
+		
+	&__min,
+	&__max
+		display: flex
+		flex-direction: row
+		align-items: baseline
+		
+		line-height: .8
+		font-size: 1.5rem
+		
+	&__mark
+	&__text
+		margin-left: .2rem
+		
+	&__unit
+
+/*=============== NEXT ===============*/
+
+
+
+
+
+@import "media"
