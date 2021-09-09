@@ -2336,15 +2336,15 @@ body {
 .temperature {
   display: flex;
   flex-wrap: nowrap;
-  margin-top: 2.7rem;
-  margin-left: 6.3rem; }
+  margin: 2.8rem auto 0 auto; }
   .temperature__deg {
+    margin-top: 5.9rem;
     letter-spacing: -1.65rem;
-    line-height: 1.2;
+    line-height: .7;
     font-family: var(--font-big);
     font-size: 23rem; }
   .temperature__wrap {
-    margin-left: 1.5rem; }
+    margin-left: 1.7rem; }
   .temperature__mesure {
     font-size: 4.5rem; }
   .temperature__box {
@@ -2359,7 +2359,42 @@ body {
   .temperature__text {
     margin-left: .2rem; }
 
-/*=============== TEMPERATURE ===============*/
+/*=============== DETAIL ===============*/
+.detail {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; }
+  .detail__wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; }
+  .detail__icon {
+    margin-left: 2rem;
+    font-size: 6rem;
+    color: var(--color-measure); }
+  .detail__description {
+    flex-basis: 26rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-size: 2.7rem; }
+  .detail__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 0.4rem; }
+  .detail__indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .detail__info {
+    font-size: 2.5rem; }
+  .detail__measure {
+    margin-left: .3rem;
+    color: var(--color-measure); }
+  .detail__name {
+    letter-spacing: 0.3rem; }
+
 /*==========  Mobile First  ==========*/
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
