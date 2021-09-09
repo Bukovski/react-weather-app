@@ -14,3 +14,6 @@ npm run start
 ```
 - icon font and CSS [weather-icons](https://erikflowers.github.io/weather-icons/)
 - diagram  [apexcharts.com](https://apexcharts.com/), [react-apexcharts](https://github.com/apexcharts/react-apexcharts)
+
+
+![weather-screen](./public/weather-screen.jpg)

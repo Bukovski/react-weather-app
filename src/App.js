@@ -4,8 +4,7 @@ import Chart from 'react-apexcharts';
 
 
 function App() {
-  
-  const options = {
+  const diagramOptions = {
     series: [{
       name: 'Inflation',
       data: [ 25, 32, 36, 36, 34 ]
@@ -15,6 +14,7 @@ function App() {
         height: 350,
         type: 'bar',
       },
+      colors: "#20A69D",
       plotOptions: {
         bar: {
           dataLabels: {
@@ -29,7 +29,7 @@ function App() {
         },
         offsetY: 10,
         style: {
-          fontSize: '1.8rem',
+          fontSize: '1.6rem',
           colors: ["#fff"]
         }
       },
@@ -45,8 +45,15 @@ function App() {
         },
         tooltip: {
           enabled: false,
+        },
+        labels: {
+          style: {
+            colors: [ "#495758" ],
+            fontSize: '1.5rem'
+          },
         }
       },
+      
       yaxis: {
         axisBorder: {
           show: true
@@ -135,9 +142,14 @@ function App() {
       
       </div>
       
-      {/*<Bar data={data1} options={options} />*/}
-  
-      <Chart options={options.options} series={options.series} type="bar" />
+      <div className="diagram">
+        <Chart
+          type="bar"
+          height={ 280 }
+          options={ diagramOptions.options }
+          series={diagramOptions.series}
+        />
+      </div>
 
     </div>
   );
