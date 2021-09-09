@@ -1,5 +1,77 @@
+import React from "react";
+import Chart from 'react-apexcharts';
+
+
 
 function App() {
+  
+  const options = {
+    series: [{
+      name: 'Inflation',
+      data: [ 25, 32, 36, 36, 34 ]
+    }],
+    options: {
+      chart: {
+        height: 350,
+        type: 'bar',
+      },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            position: 'center', // top, center, bottom
+          },
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: function (val) {
+          return val + "°C";
+        },
+        offsetY: 10,
+        style: {
+          fontSize: '1.8rem',
+          colors: ["#fff"]
+        }
+      },
+    
+      xaxis: {
+        categories: [ "Fri", "Sat", "Sun", "Mon", "Tue" ],
+        position: 'bottom',
+        axisBorder: {
+          show: true
+        },
+        axisTicks: {
+          show: false
+        },
+        tooltip: {
+          enabled: false,
+        }
+      },
+      yaxis: {
+        axisBorder: {
+          show: true
+        },
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: true,
+          align: 'right',
+          formatter: function (val) {
+            return val + "°C";
+          },
+          style: {
+            colors: [ "#495758" ],
+            fontSize: '1.5rem'
+          },
+        }
+      
+      },
+      
+    },
+  }
+  
+  
   return (
     <div className="main" data-theme="default">
       <div className="geo">
@@ -60,9 +132,13 @@ function App() {
             <div className="detail__name">pressure</div>
           </div>
         </div>
-        
+      
       </div>
       
+      {/*<Bar data={data1} options={options} />*/}
+  
+      <Chart options={options.options} series={options.series} type="bar" />
+
     </div>
   );
 }
