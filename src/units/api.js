@@ -1,5 +1,6 @@
 import moment from "moment";
 
+import Icons from "./icons";
 
 
 const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY || "";
@@ -40,7 +41,7 @@ export default function Api (latitude, longitude) {
 				humidity: json.main.humidity.toFixed(0),
 				pressure: json.main.pressure.toFixed(0),
 				weatherDescription: (json.weather[0].description).toUpperCase(),
-				weatherIcon: "",
+				weatherIcon: Icons(json.weather[0].id),
 			};
 		});
 	
