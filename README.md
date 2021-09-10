@@ -1,6 +1,6 @@
 # React Weather App
 
-> React.js - Built with the [Open Weather API](https://openweathermap.org/api)
+
 
 A simple weather app that allows you to get current weather information, based on the city you are.
 
@@ -12,8 +12,22 @@ cd react-weather-app
 npm install
 npm run start
 ```
+
+## .env.local
+
+- REACT_APP_OPENWEATHERMAP_API_KEY - your personal key from [openweathermap api_keys](https://home.openweathermap.org/api_keys)
+
+
+## Use Api
+
+- get weather data from [openweathermap](https://openweathermap.org/)
+
+
+## Use Libs
+
 - icon font and CSS [weather-icons](https://erikflowers.github.io/weather-icons/)
 - diagram  [apexcharts.com](https://apexcharts.com/), [react-apexcharts](https://github.com/apexcharts/react-apexcharts)
-
+- [axios](https://github.com/axios/axios)
+- change data format with [momentjs](https://momentjs.com/)
 
 ![weather-screen](./public/weather-screen.jpg)
