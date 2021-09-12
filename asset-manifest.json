@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Bukovski/react-weather-app/static/css/main.5a7ff6fe.chunk.css",
+    "main.js": "/Bukovski/react-weather-app/static/js/main.949220ff.chunk.js",
+    "main.js.map": "/Bukovski/react-weather-app/static/js/main.949220ff.chunk.js.map",
+    "runtime-main.js": "/Bukovski/react-weather-app/static/js/runtime-main.57032558.js",
+    "runtime-main.js.map": "/Bukovski/react-weather-app/static/js/runtime-main.57032558.js.map",
+    "static/js/2.731732d8.chunk.js": "/Bukovski/react-weather-app/static/js/2.731732d8.chunk.js",
+    "static/js/2.731732d8.chunk.js.map": "/Bukovski/react-weather-app/static/js/2.731732d8.chunk.js.map",
+    "static/js/3.b0995e0a.chunk.js": "/Bukovski/react-weather-app/static/js/3.b0995e0a.chunk.js",
+    "static/js/3.b0995e0a.chunk.js.map": "/Bukovski/react-weather-app/static/js/3.b0995e0a.chunk.js.map",
+    "index.html": "/Bukovski/react-weather-app/index.html",
+    "static/css/main.5a7ff6fe.chunk.css.map": "/Bukovski/react-weather-app/static/css/main.5a7ff6fe.chunk.css.map",
+    "static/js/2.731732d8.chunk.js.LICENSE.txt": "/Bukovski/react-weather-app/static/js/2.731732d8.chunk.js.LICENSE.txt",
+    "static/media/main.css": "/Bukovski/react-weather-app/static/media/weathericons-regular-webfont.bb2ec001.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.57032558.js",
+    "static/js/2.731732d8.chunk.js",
+    "static/css/main.5a7ff6fe.chunk.css",
+    "static/js/main.949220ff.chunk.js"
+  ]
+}
