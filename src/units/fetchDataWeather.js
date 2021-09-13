@@ -57,7 +57,7 @@ export default function FetchDataWeather (latitude, longitude) {
 			const temperaturesForecast = [];
 			const temperaturesForecastLabels = [];
 			
-			for (let i = 0; i < 9; i++) {
+			for (let i = 0; i < 5; i++) {
 				temperaturesForecast[ i ] = Number(kelvinToC(getDataJson.list[ i ].main.temp).toFixed(1));
 				temperaturesForecastLabels[ i ] = timeFromTimestamp(getDataJson.list[ i ].dt);
 			}

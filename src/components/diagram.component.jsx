@@ -3,10 +3,12 @@ import Chart from "react-apexcharts";
 
 
 const Diagram = (props) => {
+	const { temperaturesForecast, temperaturesForecastLabels } = props.data;
+	
 	const diagramOptions = {
 		series: [{
 			name: 'Inflation',
-			data: [ 25, 32, 36, 38, 34 ]
+			data: [ ...temperaturesForecast ]
 		}],
 		options: {
 			chart: {
@@ -34,7 +36,7 @@ const Diagram = (props) => {
 			},
 			
 			xaxis: {
-				categories: [ "Fri", "Sat", "Sun", "Mon", "Tue" ],
+				categories: [ ...temperaturesForecastLabels ],
 				position: 'bottom',
 				axisBorder: {
 					show: true

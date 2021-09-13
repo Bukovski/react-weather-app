@@ -11,18 +11,8 @@ import Diagram from "./components/diagram.component";
 class AppContainer extends React.Component {
   constructor(props) {
     super(props);
-  
-    // {
-    //   "actualTemperature": "18",
-    //   "maxTemperature": 23,
-    //   "minTemperature": 15,
-    //   "date": "Sunday, 1818 0",
-    //   "cityName": "Stakhanov",
-    //   "windSpeed": 2.68,
-    //   "humidity": "50",
-    //   "pressure": "1015",
-    //   "weatherDescription": "OVERCAST CLOUDS",
-    //   "weatherIcon": "wi wi-day-cloudy",
+    
+    
     //   "temperaturesForecast": [
     //   20,
     //   22,
@@ -109,17 +99,22 @@ class AppContainer extends React.Component {
       return <div>Loading...</div>
     }
     
-    const { cityName, date } = this.state;
+    const {
+      cityName, date,
+      actualTemperature, maxTemperature, minTemperature,
+      weatherDescription, weatherIcon, windSpeed, humidity, pressure,
+      temperaturesForecast, temperaturesForecastLabels
+    } = this.state;
     
     return (
       <div className="main" data-theme="default">
         <Geo cityName={ cityName } date={ date } />
       
-        <Temperature/>
+        <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
       
-        <Detail/>
+        <Detail data={{ weatherDescription, weatherIcon, windSpeed, humidity, pressure }}/>
       
-        <Diagram/>
+        <Diagram data={{ temperaturesForecast, temperaturesForecastLabels }}/>
       </div>
     );
   }

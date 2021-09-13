@@ -1,18 +1,20 @@
 import React from "react";
 
 const Detail = (props) => {
+	const { weatherDescription, weatherIcon, windSpeed, humidity, pressure } = props.data;
+	
 	return (<div className="detail">
 		<div className="detail__wrap">
           <span className="detail__icon">
-            <i className="wi wi-cloudy"/>
+            <i className={ weatherIcon }/>
           </span>
-			<div className="detail__description">Scattered clouds</div>
+			<div className="detail__description">{ weatherDescription }</div>
 		</div>
 		
 		<div className="detail__box">
 			<div className="detail__indicator">
 				<div className="detail__info">
-					3.82
+					{ windSpeed }
 					<span className="detail__measure">m/s</span>
 				</div>
 				<div className="detail__name">wind speed</div>
@@ -20,14 +22,14 @@ const Detail = (props) => {
 			
 			<div className="detail__indicator">
 				<div className="detail__info">
-					57
+					{ humidity }
 					<span className="detail__measure">%</span>
 				</div>
 				<div className="detail__name">humidity</div></div>
 			
 			<div className="detail__indicator">
 				<div className="detail__info">
-					1050
+					{ pressure }
 					<span className="detail__measure">hpa</span>
 				</div>
 				<div className="detail__name">pressure</div>
