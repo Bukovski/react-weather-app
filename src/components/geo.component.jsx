@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 
 const Geo = (props) => {
+	const { cityName, date } = props;
+	
 	return (<div className="geo">
 		<div className="geo__location">
-			Dubai, United Arab Emirates
+			{ cityName }
 		</div>
-		<div className="geo__date">Fri, May 6</div>
+		<div className="geo__date">{ date }</div>
 	</div>);
 }
 

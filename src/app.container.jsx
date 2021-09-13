@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import Api from './units/api'
+import fetchDataWeather from './units/fetchDataWeather'
 
 import Geo from "./components/geo.component";
 import Temperature from "./components/temperature.component";
@@ -11,6 +11,44 @@ import Diagram from "./components/diagram.component";
 class AppContainer extends React.Component {
   constructor(props) {
     super(props);
+  
+    // {
+    //   "actualTemperature": "18",
+    //   "maxTemperature": 23,
+    //   "minTemperature": 15,
+    //   "date": "Sunday, 1818 0",
+    //   "cityName": "Stakhanov",
+    //   "windSpeed": 2.68,
+    //   "humidity": "50",
+    //   "pressure": "1015",
+    //   "weatherDescription": "OVERCAST CLOUDS",
+    //   "weatherIcon": "wi wi-day-cloudy",
+    //   "temperaturesForecast": [
+    //   20,
+    //   22,
+    //   23,
+    //   22,
+    //   20,
+    //   18,
+    //   16,
+    //   15,
+    //   20
+    // ],
+    //   "temperaturesForecastLabels": [
+    //   "09:09",
+    //   "12:09",
+    //   "15:09",
+    //   "18:09",
+    //   "21:09",
+    //   "00:09",
+    //   "03:09",
+    //   "06:09",
+    //   "09:09"
+    // ],
+    //   "loaded": true,
+    //   "theme": "warm"
+    // }
+    
     this.state = {
       actualTemperature: '',
       maxTemperature: '--',
@@ -36,7 +74,7 @@ class AppContainer extends React.Component {
   getData() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        Api(position.coords.latitude, position.coords.longitude)
+        fetchDataWeather(position.coords.latitude, position.coords.longitude)
           .then((data) => {
             this.setState({
               actualTemperature: data.actualTemperature,
@@ -71,9 +109,11 @@ class AppContainer extends React.Component {
       return <div>Loading...</div>
     }
     
+    const { cityName, date } = this.state;
+    
     return (
       <div className="main" data-theme="default">
-        <Geo/>
+        <Geo cityName={ cityName } date={ date } />
       
         <Temperature/>
       

@@ -1,4 +1,4 @@
-import icons from './icons.json';
+import icons from './iconsList.json';
 
 export default function Icons (iconId) {
   const prefix = 'wi wi-';
