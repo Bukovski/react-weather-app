@@ -21,7 +21,7 @@ const timeFromTimestamp = function(timestamp) {
 };
 
 
-export default function FetchDataWeather (latitude, longitude) {
+const fetchDataWeather = (latitude, longitude) => {
 	const geoCoordinates = `&lat=${ latitude }&lon=${ longitude }`;
 	const currentWeatherUrl = `${ BASE_URL }weather?appid=${ API_KEY }${ geoCoordinates }`;
 	const weatherForecastUrl = `${ BASE_URL }forecast?appid=${ API_KEY }${ geoCoordinates }`;
@@ -87,3 +87,27 @@ export default function FetchDataWeather (latitude, longitude) {
 			return weatherData;
 		});
 };
+
+const fetchDataWeatherFake = () => {
+	return {
+		"actualTemperature": "22",
+		"maxTemperature": 24,
+		"minTemperature": 18,
+		"date": "September 12th",
+		"cityName": "Fake-City",
+		"windSpeed": 3.91,
+		"humidity": "43",
+		"pressure": "1016",
+		"weatherDescription": "OVERCAST CLOUDS",
+		"weatherIcon": "wi wi-day-cloudy",
+		"temperaturesForecast": [ 21, 24, 22, 19, 18 ],
+		"temperaturesForecastLabels": [ "12:09", "15:09", "18:09", "21:09", "00:09" ],
+		"loaded": true,
+		"theme": "warm"
+	}
+}
+
+export {
+	fetchDataWeather,
+	fetchDataWeatherFake
+}
