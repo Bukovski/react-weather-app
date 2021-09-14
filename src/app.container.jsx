@@ -26,8 +26,10 @@ class AppContainer extends React.Component {
       temperaturesForecast: [ -10, -5, 0, 5, 10 ],
       temperaturesForecastLabels: [ "09:00", "12:00", "15:00", "18:00", "21:00" ],
       loaded: false,
-      theme: 'warm'
+      theme: 'default'
     };
+  
+    this.refMain = React.createRef();
   }
   
   componentDidMount() {
@@ -75,27 +77,32 @@ class AppContainer extends React.Component {
   }
   
   render() {
-    // Render the activity monitor while the data is loading
-    if (!this.state.loaded) {
-      return <div>Loading...</div>
-    }
-    
     const {
       cityName, date,
       actualTemperature, maxTemperature, minTemperature,
       weatherDescription, weatherIcon, windSpeed, humidity, pressure,
-      temperaturesForecast, temperaturesForecastLabels
+      temperaturesForecast, temperaturesForecastLabels,
+      theme, loaded
     } = this.state;
-    
+  
+    // Render the activity monitor while the data is loading
+    if (!loaded) {
+      return <div>Loading...</div>
+    }
+  
     return (
-      <div className="main" data-theme="default">
+      <div
+        className="main"
+        data-theme={ theme }
+        ref={ this.refMain }
+      >
         <Geo cityName={ cityName } date={ date } />
         
         <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
         
         <Detail data={{ weatherDescription, weatherIcon, windSpeed, humidity, pressure }}/>
         
-        <Diagram data={{ temperaturesForecast, temperaturesForecastLabels }}/>
+        <Diagram data={{ temperaturesForecast, temperaturesForecastLabels, loaded }} getRef={ this.refMain }/>
       </div>
     );
   }

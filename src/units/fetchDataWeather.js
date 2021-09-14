@@ -1,24 +1,10 @@
-import moment from "moment";
-
 import Icons from "./icons";
 import { kelvinToC } from "./temperatureConvert";
+import { dateFromTimestamp, timeFromTimestamp } from "./timeConverter";
 
 
 const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY || "";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/";
-
-
-// Get date from Unix timestamp
-const dateFromTimestamp = function(timestamp) {
-	const date = new Date(timestamp * 1000);
-	return moment(date).format("MMMM Do");
-};
-
-// Get time from Unix timestamp
-const timeFromTimestamp = function(timestamp) {
-	const date = new Date(timestamp * 1000);
-	return moment(date).format("HH:MM");
-};
 
 
 const fetchDataWeather = (latitude, longitude) => {

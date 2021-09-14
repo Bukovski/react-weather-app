@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
 
 const Diagram = (props) => {
-	const { temperaturesForecast, temperaturesForecastLabels } = props.data;
+	const { temperaturesForecast, temperaturesForecastLabels, loaded } = props.data;
+	
+	const [ colorBg, setColorBg ] = useState("#fff");
+	const [ colorText, setColorText ] = useState("#495758");
+	const [ colorPrimary, setColorPrimary ] = useState("#1fa69d");
+	const [ colorSecondary, setColorSecondary] = useState("rgba(29, 211, 176, 1)");
+	
+	
+	useEffect(() => {
+		const refOnMain = props.getRef.current
+		const getCssVarContainer = getComputedStyle(refOnMain);
+		
+		setColorBg(getCssVarContainer.getPropertyValue('--color-bg'));
+		setColorText(getCssVarContainer.getPropertyValue('--color-text'));
+		setColorPrimary(getCssVarContainer.getPropertyValue('--color-primary'));
+		setColorSecondary(getCssVarContainer.getPropertyValue('--color-secondary'));
+	}, [ loaded ]);
+	
 	
 	const diagramOptions = {
 		series: [{
@@ -15,7 +32,7 @@ const Diagram = (props) => {
 				height: 350,
 				type: 'bar',
 			},
-			colors: "#20A69D",
+			colors: colorSecondary,
 			plotOptions: {
 				bar: {
 					dataLabels: {
@@ -31,7 +48,7 @@ const Diagram = (props) => {
 				offsetY: 10,
 				style: {
 					fontSize: '1.6rem',
-					colors: ["#fff"]
+					colors: [ colorBg ]
 				}
 			},
 			
@@ -49,7 +66,7 @@ const Diagram = (props) => {
 				},
 				labels: {
 					style: {
-						colors: [ "#495758" ],
+						colors: colorText,
 						fontSize: '1.5rem'
 					},
 				}
@@ -69,7 +86,7 @@ const Diagram = (props) => {
 						return val + "°C";
 					},
 					style: {
-						colors: [ "#495758" ],
+						colors: colorText,
 						fontSize: '1.5rem'
 					},
 				}
