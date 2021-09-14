@@ -28,13 +28,18 @@ class AppContainer extends React.Component {
       loaded: false,
       theme: 'default'
     };
-  
-    this.refMain = React.createRef();
   }
   
   componentDidMount() {
-    // this.getData();
-    this.getFakeData();
+    this.getData();
+    // this.getFakeData();
+  }
+  
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevState.theme !== this.state.theme) {
+      const getThemeSwitcher = document.body;
+      getThemeSwitcher.setAttribute("data-theme", this.state.theme);
+    }
   }
   
   getFakeData() {
@@ -91,18 +96,14 @@ class AppContainer extends React.Component {
     }
   
     return (
-      <div
-        className="main"
-        data-theme={ theme }
-        ref={ this.refMain }
-      >
+      <div className="main" >
         <Geo cityName={ cityName } date={ date } />
         
         <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
         
         <Detail data={{ weatherDescription, weatherIcon, windSpeed, humidity, pressure }}/>
         
-        <Diagram data={{ temperaturesForecast, temperaturesForecastLabels, loaded }} getRef={ this.refMain }/>
+        <Diagram data={{ temperaturesForecast, temperaturesForecastLabels, loaded }}/>
       </div>
     );
   }

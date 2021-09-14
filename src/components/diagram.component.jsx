@@ -12,10 +12,10 @@ const Diagram = (props) => {
 	
 	
 	useEffect(() => {
-		// read data-theme styles variables from .main class
-		const refOnMain = props.getRef.current
-		const getCssVarContainer = getComputedStyle(refOnMain);
-		
+		// read data-theme styles variables from body :root
+		const getLinkOnBody = document.body;
+		const getCssVarContainer = getComputedStyle(getLinkOnBody);
+
 		setColorBg(getCssVarContainer.getPropertyValue('--color-bg'));
 		setColorText(getCssVarContainer.getPropertyValue('--color-text'));
 		setColorPrimary(getCssVarContainer.getPropertyValue('--color-primary'));

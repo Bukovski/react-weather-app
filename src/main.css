@@ -2261,20 +2261,18 @@ template {
 .wi-wu-unknown:before {
   content: "\f00d"; }
 
-:root {
+:root, [data-theme="default"] {
+  /*========== Colors ==========*/
+  --color-bg: rgba(255, 255, 255, 1);
+  --color-text: rgba(73, 87, 88, 1);
+  --color-primary: rgba(31, 166, 157, 1);
+  --color-secondary: rgba(29, 211, 176, 1);
   /*========== Font and typography ==========*/
   --font-body: "abel-regular", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
   --font-big: "big_john", "Arial Black", "Gadget", "Nimbus Sans L", sans-serif;
   --font-slim: "slim_joe", "Courier New", Courier, "Nimbus Mono L", monospace;
   --font-icon: "weathericons";
   --font-size-base: 16px; }
-
-[data-theme="default"] {
-  /*========== Colors ==========*/
-  --color-bg: rgba(255, 255, 255, 1);
-  --color-text: rgba(73, 87, 88, 1);
-  --color-primary: rgba(31, 166, 157, 1);
-  --color-secondary: rgba(29, 211, 176, 1); }
 
 [data-theme="warm"] {
   /*========== Colors ==========*/
@@ -2348,8 +2346,7 @@ body {
   flex-wrap: nowrap;
   max-height: 100vh;
   max-width: 550px;
-  margin: 0 auto;
-  background-color: var(--color-bg); }
+  margin: 0 auto; }
 
 /*=============== GEO ===============*/
 .geo {
