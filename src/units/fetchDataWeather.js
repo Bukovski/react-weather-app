@@ -18,6 +18,8 @@ const fetchDataWeather = (latitude, longitude) => {
 			const response = await fetch(currentWeatherUrl);
 			const getDataJson = await response.json();
 			
+			console.log("currentWeatherData ->", getDataJson);
+			
 			return {
 				actualTemperature: kelvinToC(getDataJson.main.temp).toFixed(0),
 				date: dateFromTimestamp(getDataJson.dt),

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { fetchDataWeather, fetchDataWeatherFake } from './units/fetchDataWeather'
 
@@ -6,6 +6,7 @@ import Geo from "./components/geo.component";
 import Temperature from "./components/temperature.component";
 import Detail from "./components/detail.component";
 import Diagram from "./components/diagram.component";
+import Preloader from "./components/preloader/preloader.component";
 
 
 class AppContainer extends React.Component {
@@ -71,7 +72,7 @@ class AppContainer extends React.Component {
             });
           });
       },
-      (error) => alert(error.message),
+      (error) => console.error(error.message),
       {
         enableHighAccuracy: false,
         timeout: 20000,
@@ -89,22 +90,22 @@ class AppContainer extends React.Component {
       temperaturesForecast, temperaturesForecastLabels,
       theme, loaded
     } = this.state;
-  
-    // Render the activity monitor while the data is loading
-    if (!loaded) {
-      return <div>Loading...</div>
-    }
-  
+    
+    
     return (
-      <div className="main" >
-        <Geo cityName={ cityName } date={ date } />
+      <Fragment>
+        { <Preloader isLoaded={ loaded }/> }
         
-        <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
-        
-        <Detail data={{ weatherDescription, weatherIcon, windSpeed, humidity, pressure }}/>
-        
-        <Diagram data={{ temperaturesForecast, temperaturesForecastLabels, loaded }}/>
-      </div>
+        <div className="main">
+          <Geo cityName={ cityName } date={ date } />
+          
+          <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
+          
+          <Detail data={{ weatherDescription, weatherIcon, windSpeed, humidity, pressure }}/>
+          
+          <Diagram data={{ temperaturesForecast, temperaturesForecastLabels, loaded }}/>
+        </div>
+      </Fragment>
     );
   }
 }
