@@ -2271,37 +2271,37 @@ template {
 
 [data-theme="default"] {
   /*========== Colors ==========*/
-  --color-bg: #fff;
-  --color-text: #495758;
-  --color-primary: #1fa69d;
+  --color-bg: rgba(255, 255, 255, 1);
+  --color-text: rgba(73, 87, 88, 1);
+  --color-primary: rgba(31, 166, 157, 1);
   --color-secondary: rgba(29, 211, 176, 1); }
 
 [data-theme="warm"] {
   /*========== Colors ==========*/
-  --color-bg: #f5eed7;
-  --color-text: #736a51;
-  --color-primary: #bf3b3b;
+  --color-bg: rgba(245, 238, 215, 1);
+  --color-text: rgba(115, 106, 81, 1);
+  --color-primary: rgba(191, 59, 59, 1);
   --color-secondary: rgba(255, 159, 41, 1); }
 
 [data-theme="fresh"] {
   /*========== Colors ==========*/
-  --color-bg: #f1f1f1;
-  --color-text: #0d5254;
-  --color-primary: #0ebea7;
+  --color-bg: rgba(241, 241, 241, 1);
+  --color-text: rgba(13, 82, 84, 1);
+  --color-primary: rgba(14, 190, 167, 1);
   --color-secondary: rgb(41, 164, 160); }
 
 [data-theme="tonic"] {
   /*========== Colors ==========*/
-  --color-bg: #fdfffc;
-  --color-text: #011627;
-  --color-primary: #bb0d24;
+  --color-bg: rgba(253, 255, 252, 1);
+  --color-text: rgba(1, 22, 39, 1);
+  --color-primary: rgba(187, 13, 36, 1);
   --color-secondary: rgba(4, 80, 142, 1); }
 
 [data-theme="rainy"] {
   /*========== Colors ==========*/
-  --color-bg: #E4FDE1;
-  --color-text: #575761;
-  --color-primary: #8ACB88;
+  --color-bg: rgba(228, 253, 225, 1);
+  --color-text: rgba(87, 87, 97, 1);
+  --color-primary: rgba(138, 203, 136, 1);
   --color-secondary: rgba(100, 131, 129, 1); }
 
 *::-webkit-input-placeholder {
@@ -2348,7 +2348,8 @@ body {
   flex-wrap: nowrap;
   max-height: 100vh;
   max-width: 550px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: var(--color-bg); }
 
 /*=============== GEO ===============*/
 .geo {
@@ -2378,7 +2379,8 @@ body {
   .temperature__wrap {
     margin-left: 1.7rem; }
   .temperature__mesure {
-    font-size: 4.5rem; }
+    font-size: 4.5rem;
+    color: var(--color-secondary); }
   .temperature__box {
     margin-top: 4.2rem;
     margin-left: 0.7rem; }
@@ -2388,6 +2390,8 @@ body {
     align-items: baseline;
     line-height: .8;
     font-size: 1.5rem; }
+  .temperature__mark {
+    color: var(--color-secondary); }
   .temperature__text {
     margin-left: .2rem; }
 

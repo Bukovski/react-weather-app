@@ -12,6 +12,7 @@ const Diagram = (props) => {
 	
 	
 	useEffect(() => {
+		// read data-theme styles variables from .main class
 		const refOnMain = props.getRef.current
 		const getCssVarContainer = getComputedStyle(refOnMain);
 		
@@ -32,7 +33,7 @@ const Diagram = (props) => {
 				height: 350,
 				type: 'bar',
 			},
-			colors: colorSecondary,
+			colors: colorPrimary,
 			plotOptions: {
 				bar: {
 					dataLabels: {
@@ -90,16 +91,14 @@ const Diagram = (props) => {
 						fontSize: '1.5rem'
 					},
 				}
-				
 			},
-			
 		},
 	}
 	
 	return (<div className="diagram">
 		<Chart
 			type="bar"
-			height={ 280 }
+			// height={ 280 }
 			options={ diagramOptions.options }
 			series={diagramOptions.series}
 		/>

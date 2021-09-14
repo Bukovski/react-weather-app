@@ -89,9 +89,10 @@ const fetchDataWeatherFake = () => {
 		"temperaturesForecast": [ 21, 24, 22, 19, 18 ],
 		"temperaturesForecastLabels": [ "12:09", "15:09", "18:09", "21:09", "00:09" ],
 		"loaded": true,
-		"theme": "warm"
+		"theme": "rainy"
 	}
 }
+
 
 export {
 	fetchDataWeather,
