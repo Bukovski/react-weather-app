@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import { fetchDataWeather, fetchDataWeatherFake } from './units/fetchDataWeather';
 import fetchDataLocation from "./units/fetchDataLocation";
-import { messageError } from "./libs/errorMessages/errorMessages";
+import { messageError } from "./libs/clientMessages/clientMessages";
 
 import Geo from "./components/geo.component";
 import Temperature from "./components/temperature.component";
@@ -56,22 +56,8 @@ class AppContainer extends React.Component {
     try {
       const getLocation = await fetchDataLocation();
       const weatherData = await fetchDataWeather(getLocation);
-  
-      this.setState({
-        actualTemperature: weatherData.actualTemperature,
-        maxTemperature: weatherData.maxTemperature,
-        minTemperature: weatherData.minTemperature,
-        date: weatherData.date,
-        cityName: weatherData.cityName,
-        windSpeed: weatherData.windSpeed,
-        humidity: weatherData.humidity,
-        pressure: weatherData.pressure,
-        weatherDescription: weatherData.weatherDescription,
-        weatherIcon: weatherData.weatherIcon,
-        temperaturesForecast: weatherData.temperaturesForecast,
-        temperaturesForecastLabels: weatherData.temperaturesForecastLabels,
-        loaded: true
-      });
+      
+      this.setState({ ...weatherData });
     } catch (err) {
       messageError(err.message);
     }

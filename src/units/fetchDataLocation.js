@@ -1,5 +1,5 @@
 import fetcher from "../libs/fetcher";
-import { messageError } from "../libs/errorMessages/errorMessages";
+import { messageError } from "../libs/clientMessages/clientMessages";
 
 
 const API_KEY = process.env.REACT_APP_IPINFO_API_KEY || "";

@@ -2,7 +2,7 @@ import Icons from "./icons";
 import { kelvinToC } from "./temperatureConvert";
 import { dateFromTimestamp, timeFromTimestamp } from "./timeConverter";
 import fetcher from "../libs/fetcher";
-import { messageError } from "../libs/errorMessages/errorMessages";
+import { messageError } from "../libs/clientMessages/clientMessages";
 
 
 const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY || "";
@@ -19,7 +19,7 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 		try {
 			const getDataJson = await fetcher(currentWeatherUrl);
 			
-			return {
+			return  {
 				actualTemperature: kelvinToC(getDataJson.main.temp).toFixed(0),
 				date: dateFromTimestamp(getDataJson.dt),
 				cityName: getDataJson.name,
@@ -62,7 +62,21 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 	
 	return Promise.all([ currentWeatherData(), weatherForecastData() ])
 		.then((responses) => {
-			let weatherData = {};
+			let weatherData = {
+				"actualTemperature": "22",
+				"maxTemperature": 24,
+				"minTemperature": 18,
+				"date": "September 12th",
+				"cityName": "Fake-City",
+				"windSpeed": 3.91,
+				"humidity": "43",
+				"pressure": "1016",
+				"weatherDescription": "OVERCAST CLOUDS",
+				"weatherIcon": "wi wi-day-cloudy",
+				"temperaturesForecast": [ 21, 24, 22, 19, 18 ],
+				"temperaturesForecastLabels": [ "12:09", "15:09", "18:09", "21:09", "00:09" ],
+				"loaded": true
+			};
 			
 			responses.forEach((response) => {
 				weatherData = Object.assign(weatherData, response);
@@ -71,6 +85,7 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 			return weatherData;
 		});
 };
+
 
 const fetchDataWeatherFake = () => {
 	return {
@@ -86,8 +101,7 @@ const fetchDataWeatherFake = () => {
 		"weatherIcon": "wi wi-day-cloudy",
 		"temperaturesForecast": [ 21, 24, 22, 19, 18 ],
 		"temperaturesForecastLabels": [ "12:09", "15:09", "18:09", "21:09", "00:09" ],
-		"loaded": true,
-		"theme": "rainy"
+		"loaded": true
 	}
 }
 

@@ -29,7 +29,6 @@ npm run start
 
 - icon font and CSS [weather-icons](https://erikflowers.github.io/weather-icons/)
 - diagram  [apexcharts.com](https://apexcharts.com/), [react-apexcharts](https://github.com/apexcharts/react-apexcharts)
-- [axios](https://github.com/axios/axios)
 - change data format with [momentjs](https://momentjs.com/)
 -  Publish files on GitHub [gh-pages](https://github.com/tschaub/gh-pages)
 -  Pop-up messages on the page. Used to show errors [vercel-toast](https://vercel-toast.vercel.app/)
