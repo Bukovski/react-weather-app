@@ -7,7 +7,7 @@ const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY || "";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
 
-const fetchDataWeather = (latitude, longitude) => {
+const fetchDataWeather = ({ latitude, longitude }) => {
 	const geoCoordinates = `&lat=${ latitude }&lon=${ longitude }`;
 	const currentWeatherUrl = `${ BASE_URL }weather?appid=${ API_KEY }${ geoCoordinates }`;
 	const weatherForecastUrl = `${ BASE_URL }forecast?appid=${ API_KEY }${ geoCoordinates }`;

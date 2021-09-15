@@ -2,7 +2,7 @@
   "name": "react-weather-app",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://github.com/Bukovski/react-weather-app",
+  "homepage": "https://bukovski.github.io/react-weather-app/",
   "keywords": [
     "sass",
     "react",
@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^12.8.3",
     "apexcharts": "^3.28.1",
     "axios": "^0.21.4",
+    "gh-pages": "^3.2.3",
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-apexcharts": "^1.3.9",
@@ -32,7 +33,9 @@
     "eject": "react-scripts eject",
     "scss": "node-sass src/resources/sass/main.sass -o src/",
     "watch-scss": "node-sass --watch src/resources/sass/main.sass -o src/",
-    "build-scss": "npm run scss"
+    "build-scss": "npm run scss",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

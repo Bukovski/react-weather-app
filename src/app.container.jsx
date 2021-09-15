@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 
-import { fetchDataWeather, fetchDataWeatherFake } from './units/fetchDataWeather'
+import { fetchDataWeather, fetchDataWeatherFake } from './units/fetchDataWeather';
+import fetchDataLocation from "./units/fetchDataLocation";
 
 import Geo from "./components/geo.component";
 import Temperature from "./components/temperature.component";
@@ -50,36 +51,29 @@ class AppContainer extends React.Component {
   }
   
   // Fetch the data using the gps coordinates
-  getData() {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        fetchDataWeather(position.coords.latitude, position.coords.longitude)
-          .then((data) => {
-            this.setState({
-              actualTemperature: data.actualTemperature,
-              maxTemperature: data.maxTemperature,
-              minTemperature: data.minTemperature,
-              date: data.date,
-              cityName: data.cityName,
-              windSpeed: data.windSpeed,
-              humidity: data.humidity,
-              pressure: data.pressure,
-              weatherDescription: data.weatherDescription,
-              weatherIcon: data.weatherIcon,
-              temperaturesForecast: data.temperaturesForecast,
-              temperaturesForecastLabels: data.temperaturesForecastLabels,
-              loaded: true
-            });
-          });
-      },
-      (error) => console.error(error.message),
-      {
-        enableHighAccuracy: false,
-        timeout: 20000,
-        maximumAge: 1000
-      }
-    );
-    
+  async getData() {
+    try {
+      const getLocation = await fetchDataLocation();
+      const weatherData = await fetchDataWeather(getLocation.location);
+  
+      this.setState({
+        actualTemperature: weatherData.actualTemperature,
+        maxTemperature: weatherData.maxTemperature,
+        minTemperature: weatherData.minTemperature,
+        date: weatherData.date,
+        cityName: weatherData.cityName,
+        windSpeed: weatherData.windSpeed,
+        humidity: weatherData.humidity,
+        pressure: weatherData.pressure,
+        weatherDescription: weatherData.weatherDescription,
+        weatherIcon: weatherData.weatherIcon,
+        temperaturesForecast: weatherData.temperaturesForecast,
+        temperaturesForecastLabels: weatherData.temperaturesForecastLabels,
+        loaded: true
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
   
   render() {
