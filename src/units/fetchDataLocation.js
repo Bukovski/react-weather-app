@@ -1,10 +1,19 @@
 const API_KEY = process.env.REACT_APP_IPINFO_API_KEY || "";
 
 const fetchDataLocation = async () => {
-	const getGeolocation = await fetch(`https://ipinfo.io/91.214.82.65?token=${ API_KEY }`);
-	const locationInfo = await getGeolocation.json();
+	let locationInfo = "0,0";
 	
-	const splitLocationData = locationInfo.loc.split(",");
+	try {
+		const getGeolocation = await fetch(`https://ipinfo.io/91.214.82.65?token=${ API_KEY }`);
+		const jsonData = await getGeolocation.json();
+		
+		locationInfo =  jsonData.loc;
+		
+	} catch (err) {
+		throw new Error(err);
+	}
+	const splitLocationData = locationInfo.split(",");
+	
 	
 	return {
 		location: {
@@ -12,6 +21,7 @@ const fetchDataLocation = async () => {
 			longitude: splitLocationData[ 1 ],
 		}
 	}
+	
 };
 
 

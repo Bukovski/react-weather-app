@@ -72,7 +72,7 @@ class AppContainer extends React.Component {
         loaded: true
       });
     } catch (err) {
-      console.error(err);
+      throw new Error(err);
     }
   }
   
