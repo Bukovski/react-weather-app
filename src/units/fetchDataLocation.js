@@ -1,25 +1,25 @@
+import fetcher from "../libs/fetcher";
+import { messageError } from "../libs/errorMessages/errorMessages";
+
+
 const API_KEY = process.env.REACT_APP_IPINFO_API_KEY || "";
 
 const fetchDataLocation = async () => {
 	let locationInfo = "0,0";
 	
 	try {
-		const getGeolocation = await fetch(`https://ipinfo.io/91.214.82.65?token=${ API_KEY }`);
-		const jsonData = await getGeolocation.json();
+		const getGeolocation = await fetcher(`https://ipinfo.io/91.214.82.65?token=${ API_KEY }`);
 		
-		locationInfo =  jsonData.loc;
-		
+		locationInfo =  getGeolocation.loc;
 	} catch (err) {
-		throw new Error(err);
+		messageError(err.message);
 	}
+	
 	const splitLocationData = locationInfo.split(",");
 	
-	
 	return {
-		location: {
-			latitude: splitLocationData[ 0 ],
-			longitude: splitLocationData[ 1 ],
-		}
+		latitude: splitLocationData[ 0 ],
+		longitude: splitLocationData[ 1 ],
 	}
 	
 };

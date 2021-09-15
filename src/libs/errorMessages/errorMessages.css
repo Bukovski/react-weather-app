@@ -1,0 +1,8 @@
+.toast-container .toast .toast-inner.error {
+  background-color: var(--color-primary);
+}
+
+.toast-container .toast .toast-text {
+  font-family: var(--font-body);
+  font-weight: bold;
+}

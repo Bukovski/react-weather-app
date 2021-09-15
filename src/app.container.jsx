@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 
 import { fetchDataWeather, fetchDataWeatherFake } from './units/fetchDataWeather';
 import fetchDataLocation from "./units/fetchDataLocation";
+import { messageError } from "./libs/errorMessages/errorMessages";
 
 import Geo from "./components/geo.component";
 import Temperature from "./components/temperature.component";
@@ -54,7 +55,7 @@ class AppContainer extends React.Component {
   async getData() {
     try {
       const getLocation = await fetchDataLocation();
-      const weatherData = await fetchDataWeather(getLocation.location);
+      const weatherData = await fetchDataWeather(getLocation);
   
       this.setState({
         actualTemperature: weatherData.actualTemperature,
@@ -72,7 +73,7 @@ class AppContainer extends React.Component {
         loaded: true
       });
     } catch (err) {
-      throw new Error(err);
+      messageError(err.message);
     }
   }
   

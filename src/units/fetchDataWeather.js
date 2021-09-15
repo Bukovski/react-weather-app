@@ -1,6 +1,8 @@
 import Icons from "./icons";
 import { kelvinToC } from "./temperatureConvert";
 import { dateFromTimestamp, timeFromTimestamp } from "./timeConverter";
+import fetcher from "../libs/fetcher";
+import { messageError } from "../libs/errorMessages/errorMessages";
 
 
 const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY || "";
@@ -15,10 +17,7 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 	
 	const currentWeatherData = async () => {
 		try {
-			const response = await fetch(currentWeatherUrl);
-			const getDataJson = await response.json();
-			
-			console.log("currentWeatherData ->", getDataJson);
+			const getDataJson = await fetcher(currentWeatherUrl);
 			
 			return {
 				actualTemperature: kelvinToC(getDataJson.main.temp).toFixed(0),
@@ -31,16 +30,13 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 				weatherIcon: Icons(getDataJson.weather[ 0 ].id),
 			};
 		} catch (err) {
-			console.error(err)
+			messageError(err.message)
 		}
 	};
 	
 	const weatherForecastData = async () => {
 		try {
-			const response = await fetch(weatherForecastUrl)
-			const getDataJson = await response.json();
-			
-			console.log("weatherForecastData ->", getDataJson);
+			const getDataJson = await fetcher(weatherForecastUrl)
 			
 			const temperaturesForecast = [];
 			const temperaturesForecastLabels = [];
@@ -60,7 +56,7 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 				minTemperature,
 			};
 		} catch (err) {
-			console.error(err)
+			messageError(err.message)
 		}
 	}
 	

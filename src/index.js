@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'vercel-toast/dist/vercel-toast.css';
 import './main.css';
 import App from './app.container';
 import reportWebVitals from './reportWebVitals';

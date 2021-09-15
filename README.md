@@ -32,6 +32,7 @@ npm run start
 - [axios](https://github.com/axios/axios)
 - change data format with [momentjs](https://momentjs.com/)
 -  Publish files on GitHub [gh-pages](https://github.com/tschaub/gh-pages)
+-  Pop-up messages on the page. Used to show errors [vercel-toast](https://vercel-toast.vercel.app/)
 
 
 ![weather-screen](./public/weather-screen.jpg)
