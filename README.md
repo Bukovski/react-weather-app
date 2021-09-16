@@ -3,6 +3,8 @@
 
 
 A simple weather app that allows you to get current weather information, based on the city you are.
+You can change the theme of the application by clicking on the circle near the search bar and select an available theme
+
 
 ## Installation
 
@@ -17,6 +19,7 @@ npm run start
 
 - REACT_APP_OPENWEATHERMAP_API_KEY - your personal key from [openweathermap api_keys](https://home.openweathermap.org/api_keys)
 - REACT_APP_IPINFO_API_KEY - your personal key from [ipinfo](https://ipinfo.io/account/home)
+- REACT_APP_STORAGE_NAME_THEME_COLOR - store the key for the skin color in localStorage
 
 
 ## Use Api
@@ -34,4 +37,6 @@ npm run start
 -  Pop-up messages on the page. Used to show errors [vercel-toast](https://vercel-toast.vercel.app/)
 
 
-![weather-screen](./public/weather-screen.jpg)
+![weather-screen](./public/default-theme.jpg)
+![red-theme](./public/red-theme.jpg)
+![dark-theme](./public/dark-theme.jpg)

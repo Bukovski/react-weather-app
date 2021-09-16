@@ -1,0 +1,37 @@
+[
+  {
+    "theme": "default",
+    "bg": "rgba(255, 255, 255, 1)",
+    "text": "rgba(73, 87, 88, 1)",
+    "primary": "rgba(31, 166, 157, 1)",
+    "secondary": "rgba(29, 211, 176, 1)"
+  },
+  {
+    "theme": "warm",
+    "bg": "rgba(245, 238, 215, 1)",
+    "text": "rgba(115, 106, 81, 1)",
+    "primary": "rgba(191, 59, 59, 1)",
+    "secondary": "rgba(255, 159, 41, 1)"
+  },
+  {
+    "theme": "dark",
+    "bg": "rgba(13, 82, 84, 1)",
+    "text": "rgba(241, 241, 241, 1)",
+    "primary": "rgba(241, 241, 241, 1)",
+    "secondary": "rgba(241, 241, 241, 1)"
+  },
+  {
+    "theme": "tonic",
+    "bg": "rgba(253, 255, 252, 1)",
+    "text": "rgba(1, 22, 39, 1)",
+    "primary": "rgba(187, 13, 36, 1)",
+    "secondary": "rgba(4, 80, 142, 1)"
+  },
+  {
+    "theme": "rainy",
+    "bg": "rgba(228, 253, 225, 1)",
+    "text": "rgba(87, 87, 97, 1)",
+    "primary": "rgba(138, 203, 136, 1)",
+    "secondary": "rgba(100, 131, 129, 1)"
+  }
+]

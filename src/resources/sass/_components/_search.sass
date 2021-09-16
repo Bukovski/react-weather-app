@@ -18,6 +18,18 @@
     background: var(--color-bg)
     color: var(--color-text)
   
+    &::-webkit-input-placeholder
+      color: var(--color-text)
+      
+    &::-ms-input-placeholder
+      color: var(--color-text)
+
+    &::-moz-placeholder
+      color: var(--color-text)
+      
+    &:-moz-placeholder
+      color: var(--color-text)
+  
   &__button
     position: absolute
     top: 0
@@ -25,7 +37,7 @@
     width: 4rem
     height: 100%
     border: none
-    background: #7BA7AB
+    background: var(--color-primary)
     cursor: pointer
   
   &__icon

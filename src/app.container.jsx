@@ -37,21 +37,14 @@ class AppContainer extends React.Component {
   }
   
   componentDidMount() {
-    // this.getData();
-    this.getFakeData();
-  }
-  
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevState.theme !== this.state.theme) {
-      const getThemeSwitcher = document.body;
-      getThemeSwitcher.setAttribute("data-theme", this.state.theme);
-    }
+    this.getData();
+    // this.getFakeData();
   }
   
   getFakeData() {
     setTimeout(() => {
       this.setState({ ...fetchDataWeatherFake() });
-    }, 0)
+    }, 1000)
   }
   
   // Fetch the data using the gps coordinates

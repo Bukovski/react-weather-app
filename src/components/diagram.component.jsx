@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
+import themeColorList from "../units/themeColorList.json";
+import { ThemeContext } from "../hock-context/themeContext";
 
 
 const Diagram = (props) => {
@@ -8,19 +10,27 @@ const Diagram = (props) => {
 	const [ colorBg, setColorBg ] = useState("#fff");
 	const [ colorText, setColorText ] = useState("#495758");
 	const [ colorPrimary, setColorPrimary ] = useState("#1fa69d");
-	const [ colorSecondary, setColorSecondary] = useState("rgba(29, 211, 176, 1)");
+	const { theme, setTheme } = useContext(ThemeContext);
 	
 	
 	useEffect(() => {
-		// read data-theme styles variables from body :root
-		const getLinkOnBody = document.body;
-		const getCssVarContainer = getComputedStyle(getLinkOnBody);
+		try {
+			// get data theme from json
+			const findTheme = themeColorList.filter(themeColor => themeColor.theme === theme)[ 0 ];
+			
+			setColorBg(findTheme.bg);
+			setColorText(findTheme.text);
+			setColorPrimary(findTheme.primary);
+		} catch (err) {
+			// read data-theme styles variables from body :root index.html
+			const getLinkOnBody = document.body;
+			const getCssVarContainer = getComputedStyle(getLinkOnBody);
 
-		setColorBg(getCssVarContainer.getPropertyValue('--color-bg'));
-		setColorText(getCssVarContainer.getPropertyValue('--color-text'));
-		setColorPrimary(getCssVarContainer.getPropertyValue('--color-primary'));
-		setColorSecondary(getCssVarContainer.getPropertyValue('--color-secondary'));
-	}, [ loaded ]);
+			setColorBg(getCssVarContainer.getPropertyValue('--color-bg'));
+			setColorText(getCssVarContainer.getPropertyValue('--color-text'));
+			setColorPrimary(getCssVarContainer.getPropertyValue('--color-primary'));
+		}
+	}, [ loaded, theme ]);
 	
 	
 	const diagramOptions = {
