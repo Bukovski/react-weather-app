@@ -1,26 +1,24 @@
 {
   "files": {
-    "main.css": "/react-weather-app/static/css/main.f036de49.chunk.css",
-    "main.js": "/react-weather-app/static/js/main.3f22e089.chunk.js",
-    "main.js.map": "/react-weather-app/static/js/main.3f22e089.chunk.js.map",
-    "runtime-main.js": "/react-weather-app/static/js/runtime-main.2a50d691.js",
-    "runtime-main.js.map": "/react-weather-app/static/js/runtime-main.2a50d691.js.map",
+    "main.css": "/react-weather-app/static/css/main.3c0658b3.chunk.css",
+    "main.js": "/react-weather-app/static/js/main.a6c75d41.chunk.js",
+    "main.js.map": "/react-weather-app/static/js/main.a6c75d41.chunk.js.map",
+    "runtime-main.js": "/react-weather-app/static/js/runtime-main.d7e244b0.js",
+    "runtime-main.js.map": "/react-weather-app/static/js/runtime-main.d7e244b0.js.map",
     "static/css/2.f1834243.chunk.css": "/react-weather-app/static/css/2.f1834243.chunk.css",
-    "static/js/2.f191da34.chunk.js": "/react-weather-app/static/js/2.f191da34.chunk.js",
-    "static/js/2.f191da34.chunk.js.map": "/react-weather-app/static/js/2.f191da34.chunk.js.map",
-    "static/js/3.0aba6475.chunk.js": "/react-weather-app/static/js/3.0aba6475.chunk.js",
-    "static/js/3.0aba6475.chunk.js.map": "/react-weather-app/static/js/3.0aba6475.chunk.js.map",
+    "static/js/2.72ec3bf7.chunk.js": "/react-weather-app/static/js/2.72ec3bf7.chunk.js",
+    "static/js/2.72ec3bf7.chunk.js.map": "/react-weather-app/static/js/2.72ec3bf7.chunk.js.map",
     "index.html": "/react-weather-app/index.html",
     "static/css/2.f1834243.chunk.css.map": "/react-weather-app/static/css/2.f1834243.chunk.css.map",
-    "static/css/main.f036de49.chunk.css.map": "/react-weather-app/static/css/main.f036de49.chunk.css.map",
-    "static/js/2.f191da34.chunk.js.LICENSE.txt": "/react-weather-app/static/js/2.f191da34.chunk.js.LICENSE.txt",
+    "static/css/main.3c0658b3.chunk.css.map": "/react-weather-app/static/css/main.3c0658b3.chunk.css.map",
+    "static/js/2.72ec3bf7.chunk.js.LICENSE.txt": "/react-weather-app/static/js/2.72ec3bf7.chunk.js.LICENSE.txt",
     "static/media/main.css": "/react-weather-app/static/media/weathericons-regular-webfont.bb2ec001.eot"
   },
   "entrypoints": [
-    "static/js/runtime-main.2a50d691.js",
+    "static/js/runtime-main.d7e244b0.js",
     "static/css/2.f1834243.chunk.css",
-    "static/js/2.f191da34.chunk.js",
-    "static/css/main.f036de49.chunk.css",
-    "static/js/main.3f22e089.chunk.js"
+    "static/js/2.72ec3bf7.chunk.js",
+    "static/css/main.3c0658b3.chunk.css",
+    "static/js/main.a6c75d41.chunk.js"
   ]
 }
