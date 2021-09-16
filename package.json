@@ -13,6 +13,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "animated-number-react": "^0.1.2",
     "apexcharts": "^3.28.1",
     "gh-pages": "^3.2.3",
     "moment": "^2.29.1",

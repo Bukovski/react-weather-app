@@ -30,11 +30,12 @@ npm run start
 
 ## Use Libs
 
-- icon font and CSS [weather-icons](https://erikflowers.github.io/weather-icons/)
-- diagram  [apexcharts.com](https://apexcharts.com/), [react-apexcharts](https://github.com/apexcharts/react-apexcharts)
-- change data format with [momentjs](https://momentjs.com/)
+- Font icons and CSS [weather-icons](https://erikflowers.github.io/weather-icons/)
+- Diagram  [apexcharts.com](https://apexcharts.com/), [react-apexcharts](https://github.com/apexcharts/react-apexcharts)
+- Change data format with [momentjs](https://momentjs.com/)
 -  Publish files on GitHub [gh-pages](https://github.com/tschaub/gh-pages)
 -  Pop-up messages on the page. Used to show errors [vercel-toast](https://vercel-toast.vercel.app/)
+-  A simple animated number for React [animated-number-react](https://github.com/Leocardoso94/animated-number-react)
 
 
 ![weather-screen](./public/default-theme.jpg)

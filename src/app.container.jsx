@@ -22,9 +22,9 @@ class AppContainer extends React.Component {
       minTemperature: '0',
       date: 'Fri, May 6',
       cityName: 'City Name',
-      windSpeed: '---',
-      humidity: '--',
-      pressure: '----',
+      windSpeed: '0',
+      humidity: '0',
+      pressure: '0',
       weatherDescription: 'clouds',
       weatherIcon: 'wi wi-day-cloudy',
       temperaturesForecast: [ -10, -5, 0, 5, 10 ],
@@ -74,7 +74,7 @@ class AppContainer extends React.Component {
       theme, loaded, isSearching
     } = this.state;
     
-    
+    console.log("!!!")
     return (
       <Fragment>
         {/*{ <Preloader isLoaded={ loaded }/> }*/}
@@ -86,7 +86,7 @@ class AppContainer extends React.Component {
           </div>
           
           <Geo cityName={ cityName } date={ date } />
-          
+  
           <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
           
           <Detail data={{ weatherDescription, weatherIcon, windSpeed, humidity, pressure }}/>
