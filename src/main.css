@@ -2502,6 +2502,9 @@ body {
     background: var(--color-bg);
     transform: translateX(-40%);
     z-index: 10; }
+  .theme-switcher__dropdown-hide {
+    pointer-events: none;
+    opacity: 0; }
   .theme-switcher__item {
     margin: .5rem 1.4rem;
     list-style-type: none; }
