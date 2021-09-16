@@ -30,7 +30,7 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 				weatherIcon: Icons(getDataJson.weather[ 0 ].id),
 			};
 		} catch (err) {
-			messageError(err.message)
+			messageError("Couldn't get weather data");
 		}
 	};
 	
@@ -56,26 +56,26 @@ const fetchDataWeather = ({ latitude, longitude }) => {
 				minTemperature,
 			};
 		} catch (err) {
-			messageError(err.message)
+			messageError("Couldn't get weather data");
 		}
 	}
 	
 	return Promise.all([ currentWeatherData(), weatherForecastData() ])
 		.then((responses) => {
 			let weatherData = {
-				"actualTemperature": "22",
-				"maxTemperature": 24,
-				"minTemperature": 18,
-				"date": "September 12th",
-				"cityName": "Fake-City",
-				"windSpeed": 3.91,
-				"humidity": "43",
-				"pressure": "1016",
-				"weatherDescription": "OVERCAST CLOUDS",
-				"weatherIcon": "wi wi-day-cloudy",
-				"temperaturesForecast": [ 21, 24, 22, 19, 18 ],
-				"temperaturesForecastLabels": [ "12:09", "15:09", "18:09", "21:09", "00:09" ],
-				"loaded": true
+				actualTemperature: "21",
+				cityName: "Tokyo",
+				date: "Mon, September 13",
+				humidity: "42",
+				maxTemperature: 23,
+				minTemperature: 17,
+				pressure: "1012",
+				temperaturesForecast: [21, 20, 19, 17, 23],
+				temperaturesForecastLabels: ["21:09", "00:09", "03:09", "06:09", "09:09"],
+				weatherDescription: "BROKEN CLOUDS",
+				weatherIcon: "wi wi-day-cloudy",
+				windSpeed: 2.32,
+				loaded: true
 			};
 			
 			responses.forEach((response) => {
@@ -92,8 +92,8 @@ const fetchDataWeatherFake = () => {
 		"actualTemperature": "22",
 		"maxTemperature": 24,
 		"minTemperature": 18,
-		"date": "September 12th",
-		"cityName": "Fake-City",
+		"date": "Mon, September 12th",
+		"cityName": "Tokyo",
 		"windSpeed": 3.91,
 		"humidity": "43",
 		"pressure": "1016",

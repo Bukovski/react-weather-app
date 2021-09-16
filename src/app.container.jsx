@@ -2,13 +2,14 @@ import React, { Fragment } from "react";
 
 import { fetchDataWeather, fetchDataWeatherFake } from './units/fetchDataWeather';
 import fetchDataLocation from "./units/fetchDataLocation";
-import { messageError } from "./libs/clientMessages/clientMessages";
 
 import Geo from "./components/geo.component";
 import Temperature from "./components/temperature.component";
 import Detail from "./components/detail.component";
 import Diagram from "./components/diagram.component";
 import Preloader from "./components/preloader/preloader.component";
+import Search from "./components/search.component";
+import ThemeSwitcher from "./components/theme-switcher.component";
 
 
 class AppContainer extends React.Component {
@@ -28,14 +29,16 @@ class AppContainer extends React.Component {
       weatherIcon: 'wi wi-day-cloudy',
       temperaturesForecast: [ -10, -5, 0, 5, 10 ],
       temperaturesForecastLabels: [ "09:00", "12:00", "15:00", "18:00", "21:00" ],
+      
       loaded: false,
-      theme: 'default'
+      theme: 'default',
+      isSearching: false
     };
   }
   
   componentDidMount() {
-    this.getData();
-    // this.getFakeData();
+    // this.getData();
+    this.getFakeData();
   }
   
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -48,20 +51,26 @@ class AppContainer extends React.Component {
   getFakeData() {
     setTimeout(() => {
       this.setState({ ...fetchDataWeatherFake() });
-    }, 1000)
+    }, 0)
   }
   
   // Fetch the data using the gps coordinates
   async getData() {
-    try {
-      const getLocation = await fetchDataLocation();
-      const weatherData = await fetchDataWeather(getLocation);
-      
-      this.setState({ ...weatherData });
-    } catch (err) {
-      messageError(err.message);
-    }
+    const getLocation = await fetchDataLocation();
+    const weatherData = await fetchDataWeather(getLocation);
+    
+    this.setState({ ...weatherData });
   }
+  
+  
+  handleLocationChange = (event) => {
+    const query = event.target.value.trim();
+    console.log(query)
+    // if (query) {
+    //   setIsSearching(true);
+    // }
+    // debounceSearch(query);
+  };
   
   render() {
     const {
@@ -69,15 +78,20 @@ class AppContainer extends React.Component {
       actualTemperature, maxTemperature, minTemperature,
       weatherDescription, weatherIcon, windSpeed, humidity, pressure,
       temperaturesForecast, temperaturesForecastLabels,
-      theme, loaded
+      theme, loaded, isSearching
     } = this.state;
     
     
     return (
       <Fragment>
-        { <Preloader isLoaded={ loaded }/> }
+        {/*{ <Preloader isLoaded={ loaded }/> }*/}
         
         <div className="main">
+          <div className="panel">
+            <Search />
+            <ThemeSwitcher />
+          </div>
+          
           <Geo cityName={ cityName } date={ date } />
           
           <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />

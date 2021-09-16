@@ -12,7 +12,7 @@ const fetchDataLocation = async () => {
 		
 		locationInfo =  getGeolocation.loc;
 	} catch (err) {
-		messageError(err.message);
+		messageError("Your location is not defined");
 	}
 	
 	const splitLocationData = locationInfo.split(",");

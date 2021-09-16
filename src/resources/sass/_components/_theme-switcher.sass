@@ -1,0 +1,54 @@
+.theme-switcher
+  display: flex
+  
+  &__main
+    margin: auto
+    background-color: transparent
+    cursor: pointer
+    
+    &::before
+      content: ' '
+      display: inline-block
+      width: 2rem
+      height: 2rem
+      vertical-align: middle
+      box-shadow: 0 0 5px var(--color-secondary)
+      border: 2px solid var(--color-primary)
+      border-radius: 50%
+      background: var(--color-bg)
+    
+  &__dropdown
+    //pointer-events: none
+    //opacity: 0
+    opacity: 1
+    pointer-events: auto
+  
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    
+    position: absolute
+    top: 2.3rem
+    padding: 0
+    
+    transition: opacity .15s ease-out
+    overflow: hidden
+    border: 2px solid var(--color-primary)
+    background: var(--color-bg)
+    transform: translateX(-40%)
+    z-index: 10
+    
+  &__item
+    margin: .5rem 1.4rem
+    list-style-type: none
+    
+  &__toggle
+    display: inline-block
+    width: 2rem
+    height: 2rem
+    vertical-align: middle
+    box-shadow: 0 0 5px var(--color-secondary)
+    border: 2px solid var(--color-primary)
+    border-radius: 50%
+    background: var(--color-bg)
+    cursor: pointer
