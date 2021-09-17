@@ -1,5 +1,15 @@
+const CORS = "https://cors-anywhere.herokuapp.com/";
+
 export default async function fetcher(url) {
-  const response = await fetch(url);
+  const response = await fetch(CORS + url, {
+    mode: 'cors',
+    headers: { // cors headers
+      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Credentials': "true"
+    }
+  });
   
 
   if (!response.ok) {
