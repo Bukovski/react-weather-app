@@ -28,7 +28,7 @@ const ThemeSwitcher = (props) => {
 			<ul className={ "theme-switcher__dropdown " + ((!isComponentVisible) ? "theme-switcher__dropdown-hide" : "") }
 			>
 				{ themeColorList.map(theme => {
-					return <li className="theme-switcher__item">
+					return <li className="theme-switcher__item" key={ theme.id }>
 						<span
 							className="theme-switcher__toggle"
 							style={{

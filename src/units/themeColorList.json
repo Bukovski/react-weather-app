@@ -1,5 +1,6 @@
 [
   {
+    "id": "1als",
     "theme": "default",
     "bg": "rgba(255, 255, 255, 1)",
     "text": "rgba(73, 87, 88, 1)",
@@ -7,6 +8,7 @@
     "secondary": "rgba(29, 211, 176, 1)"
   },
   {
+    "id": "2als",
     "theme": "warm",
     "bg": "rgba(245, 238, 215, 1)",
     "text": "rgba(115, 106, 81, 1)",
@@ -14,6 +16,7 @@
     "secondary": "rgba(255, 159, 41, 1)"
   },
   {
+    "id": "3als",
     "theme": "dark",
     "bg": "rgba(13, 82, 84, 1)",
     "text": "rgba(241, 241, 241, 1)",
@@ -21,6 +24,7 @@
     "secondary": "rgba(241, 241, 241, 1)"
   },
   {
+    "id": "4als",
     "theme": "tonic",
     "bg": "rgba(253, 255, 252, 1)",
     "text": "rgba(1, 22, 39, 1)",
@@ -28,6 +32,7 @@
     "secondary": "rgba(4, 80, 142, 1)"
   },
   {
+    "id": "5als",
     "theme": "rainy",
     "bg": "rgba(228, 253, 225, 1)",
     "text": "rgba(87, 87, 97, 1)",
