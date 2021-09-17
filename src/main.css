@@ -2482,9 +2482,17 @@ body {
   .search__autocomplete {
     position: absolute;
     list-style-type: none;
+    left: -2px;
+    top: 3.5rem;
     width: 90%;
     padding: 0;
-    margin: 0 auto; }
+    margin: 0 auto;
+    font-family: var(--font-body);
+    border-top: 2px solid var(--color-primary);
+    border-right: 2px solid var(--color-primary);
+    border-left: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    z-index: 5; }
   .search__autocomplete-item {
     padding: 0.5rem 1.7rem;
     border-bottom: 2px solid var(--color-bg);

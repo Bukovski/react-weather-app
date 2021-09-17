@@ -106,5 +106,210 @@
       "street": "Стахановская улица"
     },
     "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 180004, Псков, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_C9xMqqvGcyLEEHIWksr7ID",
+    "address": {
+      "country": "Россия",
+      "state": "Северо-Западный федеральный округ",
+      "county": "Псковская область",
+      "city": "Псков",
+      "district": "Псков",
+      "street": "Стахановская улица",
+      "postalCode": "180004"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 403873, Камышин, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_GIpVGp.kvktGeIee6zIZ0D",
+    "address": {
+      "country": "Россия",
+      "state": "Южный федеральный округ",
+      "county": "Волгоградская область",
+      "city": "Камышин",
+      "district": "Камышин",
+      "street": "Стахановская улица",
+      "postalCode": "403873"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 140109, Раменский район, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_yftiYrwXm8C.tamdTrmSrC",
+    "address": {
+      "country": "Россия",
+      "state": "Центральный федеральный округ",
+      "county": "Московская область",
+      "city": "Раменский район",
+      "district": "Раменское",
+      "street": "Стахановская улица",
+      "postalCode": "140109"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Беларусь, 220070, Мінск, Стаханаўская вуліца",
+    "language": "be",
+    "countryCode": "BLR",
+    "locationId": "NT_PFrFaFaHNSF3ut9Htmiu7A",
+    "address": {
+      "country": "Беларусь",
+      "state": "Мінск",
+      "county": "Мінск",
+      "city": "Мінск",
+      "street": "Стаханаўская вуліца",
+      "postalCode": "220070"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Республика Беларусь, 220070, Минск, Стахановская улица",
+    "language": "ru",
+    "countryCode": "BLR",
+    "locationId": "NT_lMdneK58EBNc9SWb.9isZC",
+    "address": {
+      "country": "Республика Беларусь",
+      "state": "Минск",
+      "county": "Минск",
+      "city": "Минск",
+      "street": "Стахановская улица",
+      "postalCode": "220070"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 170004, Тверь, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_kRU9NMxapOZ3Etyj7DD.QA",
+    "address": {
+      "country": "Россия",
+      "state": "Центральный федеральный округ",
+      "county": "Тверская область",
+      "city": "Тверь",
+      "district": "Пролетарский район",
+      "street": "Стахановская улица",
+      "postalCode": "170004"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 350051, Краснодар, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_TNKFpZMvZHsrpS2TcdSMKD",
+    "address": {
+      "country": "Россия",
+      "state": "Южный федеральный округ",
+      "county": "Краснодарский край",
+      "city": "Краснодар",
+      "district": "Западный округ",
+      "street": "Стахановская улица",
+      "postalCode": "350051"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 167009, Сыктывкар, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_9UVHUIggTMjtuVFGEtUSFA",
+    "address": {
+      "country": "Россия",
+      "state": "Северо-Западный федеральный округ",
+      "county": "Республика Коми",
+      "city": "Сыктывкар",
+      "district": "Сыктывкар",
+      "street": "Стахановская улица",
+      "postalCode": "167009"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 624131, Новоуральск, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_aU73x4CiMKDARMldKcB47B",
+    "address": {
+      "country": "Россия",
+      "state": "Уральский федеральный округ",
+      "county": "Свердловская область",
+      "city": "Новоуральск",
+      "district": "Новоуральск",
+      "street": "Стахановская улица",
+      "postalCode": "624131"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 301275, Киреевский район, Стахановский",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_MEYmAssQttjub2mwHaR5UB",
+    "address": {
+      "country": "Россия",
+      "state": "Центральный федеральный округ",
+      "county": "Тульская область",
+      "city": "Киреевский район",
+      "district": "Стахановский",
+      "postalCode": "301275"
+    },
+    "matchLevel": "district"
+  },
+  {
+    "label": "Россия, 650903, Кемерово, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_oRXjgyr9D95HGdvDElQ.wA",
+    "address": {
+      "country": "Россия",
+      "state": "Сибирский федеральный округ",
+      "county": "Кемеровская область - Кузбасс",
+      "city": "Кемерово",
+      "district": "Рудничный район",
+      "street": "Стахановская улица",
+      "postalCode": "650903"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 400011, Волгоград, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_Gi1OFXlsmH8GogDbGHpw6D",
+    "address": {
+      "country": "Россия",
+      "state": "Южный федеральный округ",
+      "county": "Волгоградская область",
+      "city": "Волгоград",
+      "district": "Советский район",
+      "street": "Стахановская улица",
+      "postalCode": "400011"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 456305, Миасс, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_GWJJ3rJeIRDr3tuL8LyepB",
+    "address": {
+      "country": "Россия",
+      "state": "Уральский федеральный округ",
+      "county": "Челябинская область",
+      "city": "Миасс",
+      "district": "Миасс",
+      "street": "Стахановская улица",
+      "postalCode": "456305"
+    },
+    "matchLevel": "street"
   }
 ]
