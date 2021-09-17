@@ -2441,7 +2441,8 @@ body {
   margin: 20px auto 0 auto; }
 
 .search {
-  flex-basis: 70%; }
+  flex-basis: 70%;
+  position: relative; }
   .search__wrap {
     position: relative;
     width: 90%;
@@ -2478,6 +2479,21 @@ body {
     max-width: 100%;
     width: auto;
     height: auto; }
+  .search__autocomplete {
+    position: absolute;
+    list-style-type: none;
+    width: 90%;
+    padding: 0;
+    margin: 0 auto; }
+  .search__autocomplete-item {
+    padding: 0.5rem 1.7rem;
+    border-bottom: 2px solid var(--color-bg);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: .5s all; }
+    .search__autocomplete-item:hover, .search__autocomplete-item--color {
+      border-bottom: 2px solid var(--color-primary); }
 
 .theme-switcher {
   display: flex; }

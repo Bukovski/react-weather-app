@@ -27,6 +27,7 @@ npm run start
 
 - get weather data from [openweathermap](https://openweathermap.org/)
 - get user location data from [ipinfo.io](https://ipinfo.io/)
+- get autocomplete data for input from [here.com](https://www.here.com/)
 
 
 ## Use Libs
