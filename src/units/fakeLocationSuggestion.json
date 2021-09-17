@@ -1,0 +1,110 @@
+[
+  {
+    "label": "Україна, Попаснянський район, Стаханов",
+    "language": "uk",
+    "countryCode": "UKR",
+    "locationId": "NT_TT3PspwjVyV5jqIl-hOR8D",
+    "address": {
+      "country": "Україна",
+      "county": "Луганська область",
+      "city": "Попаснянський район",
+      "district": "Стаханов"
+    },
+    "matchLevel": "district"
+  },
+  {
+    "label": "Россия, 614022, Пермь, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_MEAjK2AZW8cNptqdedUq3B",
+    "address": {
+      "country": "Россия",
+      "state": "Приволжский федеральный округ",
+      "county": "Пермский край",
+      "city": "Пермь",
+      "district": "Индустриальный район",
+      "street": "Стахановская улица",
+      "postalCode": "614022"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 614066, Пермь, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_UJFhVJu4W1zMOQym878JQB",
+    "address": {
+      "country": "Россия",
+      "state": "Приволжский федеральный округ",
+      "county": "Пермский край",
+      "city": "Пермь",
+      "district": "Индустриальный район",
+      "street": "Стахановская улица",
+      "postalCode": "614066"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 109428, Москва, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_NbOGv0PokGMBL9XizcL1rC",
+    "address": {
+      "country": "Россия",
+      "state": "Центральный федеральный округ",
+      "county": "Москва",
+      "city": "Москва",
+      "district": "МО Рязанский",
+      "street": "Стахановская улица",
+      "postalCode": "109428"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 353451, Анапа, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_4QGcaSXiIVG7ZUbJCGyuQC",
+    "address": {
+      "country": "Россия",
+      "state": "Южный федеральный округ",
+      "county": "Краснодарский край",
+      "city": "Анапа",
+      "district": "Анапа",
+      "street": "Стахановская улица",
+      "postalCode": "353451"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, 620012, Екатеринбург, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_hp4zfXVT4TZA5r4.AH4s.B",
+    "address": {
+      "country": "Россия",
+      "state": "Уральский федеральный округ",
+      "county": "Свердловская область",
+      "city": "Екатеринбург",
+      "district": "Орджоникидзевский район",
+      "street": "Стахановская улица",
+      "postalCode": "620012"
+    },
+    "matchLevel": "street"
+  },
+  {
+    "label": "Россия, Ишимбайский район, Стахановская улица",
+    "language": "ru",
+    "countryCode": "RUS",
+    "locationId": "NT_FUyPq8bSvSep6GGK5w51iC",
+    "address": {
+      "country": "Россия",
+      "state": "Приволжский федеральный округ",
+      "county": "Республика Башкортостан",
+      "city": "Ишимбайский район",
+      "district": "Ишимбай",
+      "street": "Стахановская улица"
+    },
+    "matchLevel": "street"
+  }
+]

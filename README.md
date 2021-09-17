@@ -19,6 +19,7 @@ npm run start
 
 - REACT_APP_OPENWEATHERMAP_API_KEY - your personal key from [openweathermap api_keys](https://home.openweathermap.org/api_keys)
 - REACT_APP_IPINFO_API_KEY - your personal key from [ipinfo](https://ipinfo.io/account/home)
+- REACT_APP_AUTOCOMPLETE_API_KEY - your personal key from [here.com](https://developer.here.com/documentation/examples/rest/geocoding_suggestions)
 - REACT_APP_STORAGE_NAME_THEME_COLOR - store the key for the skin color in localStorage
 
 

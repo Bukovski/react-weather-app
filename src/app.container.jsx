@@ -37,8 +37,8 @@ class AppContainer extends React.Component {
   }
   
   componentDidMount() {
-    this.getData();
-    // this.getFakeData();
+    // this.getData();
+    this.getFakeData();
   }
   
   getFakeData() {
