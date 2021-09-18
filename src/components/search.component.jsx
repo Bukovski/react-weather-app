@@ -128,7 +128,11 @@ const Search = (props) => {
   }
   
   const handleClickButton = (event) => {
-    onLocationChange(text)
+    onLocationChange(text);
+  
+    _clearFocusSuggestion();
+    handleClearField();
+    setText("");
   }
   
   return (

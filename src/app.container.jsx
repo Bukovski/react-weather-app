@@ -31,6 +31,7 @@ class AppContainer extends React.Component {
       temperaturesForecastLabels: [ "09:00", "12:00", "15:00", "18:00", "21:00" ],
       
       loaded: false,
+      error: false,
       theme: 'default'
     };
   }
@@ -56,10 +57,11 @@ class AppContainer extends React.Component {
   
   
   handleLocationChange = async (inputText) => {
-    console.log(inputText)
-      const weatherData = await fetchDataWeather({ cityName: inputText });
-  
-    this.setState({ ...weatherData });
+    const weatherData = await fetchDataWeather({ cityName: inputText });
+    
+    if (!weatherData.error) {
+      this.setState({ ...weatherData });
+    }
   };
   
   render() {
@@ -82,7 +84,7 @@ class AppContainer extends React.Component {
           </div>
           
           <Geo cityName={ cityName } date={ date } />
-  
+          
           <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
           
           <Detail data={{ weatherDescription, weatherIcon, windSpeed, humidity, pressure }}/>

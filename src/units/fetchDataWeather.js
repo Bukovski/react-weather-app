@@ -36,6 +36,7 @@ const fetchDataWeather = ({ latitude, longitude, cityName }) => {
 			};
 		} catch (err) {
 			messageError("Couldn't get weather data");
+			return { error: true };
 		}
 	};
 	
@@ -62,6 +63,7 @@ const fetchDataWeather = ({ latitude, longitude, cityName }) => {
 			};
 		} catch (err) {
 			messageError("Couldn't get weather data");
+			return { error: true };
 		}
 	}
 	
@@ -80,7 +82,8 @@ const fetchDataWeather = ({ latitude, longitude, cityName }) => {
 				weatherDescription: "BROKEN CLOUDS",
 				weatherIcon: "wi wi-day-cloudy",
 				windSpeed: 2.32,
-				loaded: true
+				loaded: true,
+				error: false
 			};
 			
 			responses.forEach((response) => {
