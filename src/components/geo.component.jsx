@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Geo = (props) => {
-	const { cityName, date } = props;
+	const { cityName, date } = props.data;
 	
 	return (<div className="geo">
 		<div className="geo__location">

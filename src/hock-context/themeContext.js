@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, createContext } from 'react';
 
 
 const STORAGE_NAME_THEME_COLOR = process.env.REACT_APP_STORAGE_NAME_THEME_COLOR || "color";
@@ -19,7 +19,7 @@ const getInitialTheme = () => {
 };
 
 
-export const ThemeContext = React.createContext();
+export const ThemeContext = createContext();
 
 
 export const ThemeProvider = ({ initialTheme, children }) => {

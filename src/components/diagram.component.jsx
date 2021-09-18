@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
-import themeColorList from "../units/themeColorList.json";
+import themeColorList from "../utils/themeColorList.json";
 import { ThemeContext } from "../hock-context/themeContext";
 
 

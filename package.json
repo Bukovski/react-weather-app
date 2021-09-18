@@ -4,9 +4,15 @@
   "private": false,
   "homepage": "https://bukovski.github.io/react-weather-app/",
   "keywords": [
-    "sass",
     "react",
-    "api"
+    "react api",
+    "react sass",
+    "react weather",
+    "react forecast",
+    "react diagram",
+    "react ipinfo",
+    "react here.com",
+    "react autocomplete"
   ],
   "author": "Kirill Bukovski",
   "dependencies": {

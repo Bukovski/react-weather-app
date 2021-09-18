@@ -1,15 +1,14 @@
 import React, { Fragment } from "react";
 
-import { fetchDataWeather, fetchDataWeatherFake } from './units/fetchDataWeather';
-import fetchDataLocation from "./units/fetchDataLocation";
+import { fetchDataWeather, fetchDataWeatherFake } from '../utils/fetchDataWeather';
+import fetchDataLocation from "../utils/fetchDataLocation";
 
-import Geo from "./components/geo.component";
-import Temperature from "./components/temperature.component";
-import Detail from "./components/detail.component";
-import Diagram from "./components/diagram.component";
-import Preloader from "./components/preloader/preloader.component";
-import Search from "./components/search.component";
-import ThemeSwitcher from "./components/theme-switcher.component";
+import Geo from "../components/geo.component";
+import Temperature from "../components/temperature.component";
+import Detail from "../components/detail.component";
+import Diagram from "../components/diagram.component";
+import ThemeSwitcher from "../components/themeSwitcher.component";
+import AutocompleteContainer from "./autocomplete.container";
 
 
 class AppContainer extends React.Component {
@@ -29,7 +28,6 @@ class AppContainer extends React.Component {
       weatherIcon: 'wi wi-day-cloudy',
       temperaturesForecast: [ -10, -5, 0, 5, 10 ],
       temperaturesForecastLabels: [ "09:00", "12:00", "15:00", "18:00", "21:00" ],
-      
       loaded: false,
       error: false,
       theme: 'default'
@@ -37,32 +35,36 @@ class AppContainer extends React.Component {
   }
   
   componentDidMount() {
-    this.getData();
-    // this.getFakeData();
+    this._getData();
+    // this._getFakeData();
   }
   
-  getFakeData() {
+  _getFakeData() {
     setTimeout(() => {
       this.setState({ ...fetchDataWeatherFake() });
     }, 1000)
   }
   
-  // Fetch the data using the gps coordinates
-  async getData() {
-    const getLocation = await fetchDataLocation();
-    const weatherData = await fetchDataWeather(getLocation);
-    
-    this.setState({ ...weatherData });
-  }
-  
-  
-  handleLocationChange = async (inputText) => {
-    const weatherData = await fetchDataWeather({ cityName: inputText });
+  _setDataWeather = async (dataWeather) => {
+    const weatherData = await fetchDataWeather(dataWeather);
     
     if (!weatherData.error) {
       this.setState({ ...weatherData });
     }
   };
+  
+  // Fetch the data using the gps coordinates
+  _getData = async () => {
+    const getLocation = await fetchDataLocation();
+    this._setDataWeather(getLocation)
+  }
+  
+  
+  // Fetch the data using city name from input on page
+  handleLocationChange = async (inputText) => {
+    this._setDataWeather({ cityName: inputText })
+  };
+  
   
   render() {
     const {
@@ -75,15 +77,13 @@ class AppContainer extends React.Component {
     
     return (
       <Fragment>
-        { <Preloader isLoaded={ loaded }/> }
-        
         <div className="main">
           <div className="panel">
-            <Search onLocationChange={ this.handleLocationChange }/>
+            <AutocompleteContainer onLocationChange={ this.handleLocationChange }/>
             <ThemeSwitcher />
           </div>
           
-          <Geo cityName={ cityName } date={ date } />
+          <Geo data={{ cityName, date }} />
           
           <Temperature data={{ actualTemperature, maxTemperature, minTemperature }} />
           
@@ -95,6 +95,7 @@ class AppContainer extends React.Component {
     );
   }
 }
+
 
 export default AppContainer;
 

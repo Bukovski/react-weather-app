@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../hock-context/themeContext";
-import themeColorList from "../units/themeColorList.json";
+import themeColorList from "../utils/themeColorList.json";
 import useComponentVisible from "../hock-context/useComponentVisible";
 
 
