@@ -10,6 +10,7 @@ const Search = (props) => {
     textValue,
   } = props;
   
+  
   return (
     <div className="search">
       <div className="search__wrap">
