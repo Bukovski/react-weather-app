@@ -10,7 +10,7 @@ const fetchDataLocation = async () => {
 	try {
 		const getGeolocation = await fetcher(`https://ipinfo.io/91.214.82.65?token=${ API_KEY }`);
 		
-		locationInfo =  getGeolocation.loc;
+		locationInfo = getGeolocation.loc;
 	} catch (err) {
 		messageError("Your location is not defined");
 	}

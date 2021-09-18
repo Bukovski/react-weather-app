@@ -10,7 +10,7 @@ const Diagram = (props) => {
 	const [ colorBg, setColorBg ] = useState("#fff");
 	const [ colorText, setColorText ] = useState("#495758");
 	const [ colorPrimary, setColorPrimary ] = useState("#1fa69d");
-	const { theme, setTheme } = useContext(ThemeContext);
+	const { theme } = useContext(ThemeContext);
 	
 	
 	useEffect(() => {

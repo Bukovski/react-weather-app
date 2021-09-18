@@ -31,14 +31,13 @@ class AppContainer extends React.Component {
       temperaturesForecastLabels: [ "09:00", "12:00", "15:00", "18:00", "21:00" ],
       
       loaded: false,
-      theme: 'default',
-      isSearching: false
+      theme: 'default'
     };
   }
   
   componentDidMount() {
-    // this.getData();
-    this.getFakeData();
+    this.getData();
+    // this.getFakeData();
   }
   
   getFakeData() {
@@ -56,13 +55,11 @@ class AppContainer extends React.Component {
   }
   
   
-  handleLocationChange = (event) => {
-    const query = event.target.value.trim();
-    console.log(query)
-    // if (query) {
-    //   setIsSearching(true);
-    // }
-    // debounceSearch(query);
+  handleLocationChange = async (inputText) => {
+    console.log(inputText)
+      const weatherData = await fetchDataWeather({ cityName: inputText });
+  
+    this.setState({ ...weatherData });
   };
   
   render() {
@@ -71,17 +68,16 @@ class AppContainer extends React.Component {
       actualTemperature, maxTemperature, minTemperature,
       weatherDescription, weatherIcon, windSpeed, humidity, pressure,
       temperaturesForecast, temperaturesForecastLabels,
-      theme, loaded, isSearching
+      loaded
     } = this.state;
     
-    console.log("!!!")
     return (
       <Fragment>
-        {/*{ <Preloader isLoaded={ loaded }/> }*/}
+        { <Preloader isLoaded={ loaded }/> }
         
         <div className="main">
           <div className="panel">
-            <Search />
+            <Search onLocationChange={ this.handleLocationChange }/>
             <ThemeSwitcher />
           </div>
           

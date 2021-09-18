@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 export default function useComponentVisible(initialIsVisible) {
@@ -17,7 +17,7 @@ export default function useComponentVisible(initialIsVisible) {
 		return () => {
 			document.removeEventListener('click', handleClickOutside, true);
 		};
-	});
+	}, []);
 	
 	return { ref, isComponentVisible, setIsComponentVisible };
 }

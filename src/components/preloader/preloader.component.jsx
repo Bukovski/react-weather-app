@@ -16,6 +16,7 @@ const Preloader = (props) => {
 		return () => {
 			clearTimeout(timer)
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ isLoaded ]);
 	
 
@@ -23,10 +24,10 @@ const Preloader = (props) => {
 		visible
 			? <div className={ "preloader " + (isLoaded ? "preloader-hidden" : "") }>
 				<svg width="200" height="200" viewBox="0 0 100 100">
-					<polyline className="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none" />
-					<polyline className="line-cornered stroke-still" points="0,0 0,100 100,100" stroke-width="10" fill="none" />
-					<polyline className="line-cornered stroke-animation" points="0,0 100,0 100,100" stroke-width="10" fill="none" />
-					<polyline className="line-cornered stroke-animation" points="0,0 0,100 100,100" stroke-width="10" fill="none" />
+					<polyline className="line-cornered stroke-still" points="0,0 100,0 100,100" strokeWidth="10" fill="none" />
+					<polyline className="line-cornered stroke-still" points="0,0 0,100 100,100" strokeWidth="10" fill="none" />
+					<polyline className="line-cornered stroke-animation" points="0,0 100,0 100,100" strokeWidth="10" fill="none" />
+					<polyline className="line-cornered stroke-animation" points="0,0 0,100 100,100" strokeWidth="10" fill="none" />
 				</svg>
 			</div>
 			: null

@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import fetcher from "../libs/fetcher";
 import { messageError } from "../libs/clientMessages/clientMessages";
-import fakeLocationSuggestion from "../units/fakeLocationSuggestion.json";
+// import fakeLocationSuggestion from "../units/fakeLocationSuggestion.json";
 
 
 const API_KEY = process.env.REACT_APP_AUTOCOMPLETE_API_KEY || "";
 const MAX_RESULT = 50;
 
 const Search = (props) => {
+  const { onLocationChange = () => {} } = props;
+  
   const isCancelled = useRef(false);
   // const isCancelled = useRef(true);
   const [ users, setUsers ] = useState([]);
@@ -19,39 +21,37 @@ const Search = (props) => {
   // After pressing, the enter will return to position -1
   const [ focusSuggestion, setFocusSuggestion ] = useState(-1);
   
-  //TODO:
-  // 5, отправить данные из инпута только после нажатия кнопки отправки
-  // 6, получить геоданные о городе
   
   useEffect(() => {
     const loadUsers = async () => {
       try {
         const URL = `https://autocomplete.geocoder.ls.hereapi.com/6.2/suggest.json?query=${ encodeURIComponent(text) }&maxresults=${ MAX_RESULT }&apikey=${ API_KEY }`;
         
-        
         const res = await fetcher(URL);
         const suggestionsCollection = res.suggestions;
         
         const suggestionsFilter = _cityFilter(suggestionsCollection);
-        console.log(suggestionsCollection, suggestionsFilter)
         
         if (suggestionsFilter) {
           setUsers(suggestionsFilter);
         }
         
-        _clearSuggestion(text)
-        _clearFocusSuggestion();
       } catch (err) {
         messageError("Sorry, something wrong with input autocomplete");
-        // isCancelled.current = true;
+        isCancelled.current = true;
       }
     }
     
     // If an error occurs while receiving data from the server,
     // then we no longer make a request to the server
-    if (!isCancelled.current) {
+    if (!isCancelled.current && text.length) {
+      _clearFocusSuggestion();
+      _clearSuggestion(text)
+      
       loadUsers();
     }
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ text ]);
 
   
@@ -67,12 +67,11 @@ const Search = (props) => {
   const _clearFocusSuggestion = () => {
     if (focusSuggestion !== -1) {
       setFocusSuggestion(-1);
-      handleClearField();
     }
   }
   
   const _clearSuggestion = (text) => {
-    if (!text) {
+    if (!text.length && suggestions.length) {
       setSuggestions([]);
     }
   }
@@ -83,7 +82,6 @@ const Search = (props) => {
     
     return `${ cityName }, ${ countyName }`;
   }
-  
   
   
   const handleChangeValue = (event) => {
@@ -109,7 +107,7 @@ const Search = (props) => {
       (event.key === "ArrowUp" || event.code === " ArrowUp")
       && focusSuggestion > -1
     ) {
-      setFocusSuggestion(focusSuggestion - 1)
+      setFocusSuggestion(focusSuggestion - 1);
     }
     
     const maxSuggest = suggestions.length - 1;
@@ -117,17 +115,21 @@ const Search = (props) => {
       (event.key === "ArrowDown" || event.code === " ArrowDown")
       && focusSuggestion !== maxSuggest
     ) {
-      setFocusSuggestion(focusSuggestion + 1)
+      setFocusSuggestion(focusSuggestion + 1);
     }
     
     if (
       (event.key === "Enter" || event.code === " Enter")
       && focusSuggestion !== -1
     ) {
-      setText(_cityNameLayout(suggestions[ focusSuggestion ]))
+      setText(_cityNameLayout(suggestions[ focusSuggestion ]));
+      handleClearField();
     }
   }
   
+  const handleClickButton = (event) => {
+    onLocationChange(text)
+  }
   
   return (
     <div className="search">
@@ -143,7 +145,11 @@ const Search = (props) => {
           value={ text }
         />
         
-        <button type="submit" className="search__button">
+        <button
+          type="submit"
+          className="search__button"
+          onClick={ handleClickButton }
+        >
           <svg
             width="24"
             height="24"

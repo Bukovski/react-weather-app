@@ -4,7 +4,6 @@ import 'vercel-toast/dist/vercel-toast.css';
 import './main.css';
 import { ThemeProvider } from "./hock-context/themeContext";
 import App from './app.container';
-import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
@@ -16,5 +15,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
-// reportWebVitals(console.log);
