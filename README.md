@@ -1,9 +1,11 @@
-# React Weather App
-
+# :umbrella: React Weather App 
 
 
 A simple weather app that allows you to get current weather information, based on the city you are.
-You can change the theme of the application by clicking on the circle near the search bar and select an available theme
+
+You can change the theme of the application by clicking on the circle near the search bar and select an available theme.
+
+When you enter a city in the input field, you will have access to tips that you can select by clicking or navigating through them using the up and down keys, then click enter to select the city you need
 
 
 ## Installation
@@ -40,6 +42,7 @@ npm run start
 -  A simple animated number for React [animated-number-react](https://github.com/Leocardoso94/animated-number-react)
 
 
-![weather-screen](./public/default-theme.jpg)
-![red-theme](./public/red-theme.jpg)
-![dark-theme](./public/dark-theme.jpg)
+![weather-screen](./screenshots/default-theme.jpg)
+![red-theme](./screenshots/red-theme.jpg)
+![dark-theme](./screenshots/dark-theme.jpg)
+![green-theme](./screenshots/green-theme.jpg)
