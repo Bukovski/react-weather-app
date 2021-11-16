@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail Component should render props 1`] = `
+<div
+  class="detail"
+>
+  <div
+    class="detail__wrap"
+  >
+    <span
+      class="detail__icon"
+    >
+      <i
+        class="wi wi-day-cloudy"
+      />
+    </span>
+    <div
+      class="detail__description"
+    >
+      BROKEN CLOUDS
+    </div>
+  </div>
+  <div
+    class="detail__box"
+  >
+    <div
+      class="detail__indicator"
+    >
+      <div
+        class="detail__info"
+      >
+        <span>
+          2.05
+        </span>
+        <span
+          class="detail__measure"
+        >
+          m/s
+        </span>
+      </div>
+      <div
+        class="detail__name"
+      >
+        wind speed
+      </div>
+    </div>
+    <div
+      class="detail__indicator"
+    >
+      <div
+        class="detail__info"
+      >
+        <span>
+          59
+        </span>
+        <span
+          class="detail__measure"
+        >
+          %
+        </span>
+      </div>
+      <div
+        class="detail__name"
+      >
+        humidity
+      </div>
+    </div>
+    <div
+      class="detail__indicator"
+    >
+      <div
+        class="detail__info"
+      >
+        <span>
+          1022
+        </span>
+        <span
+          class="detail__measure"
+        >
+          hpa
+        </span>
+      </div>
+      <div
+        class="detail__name"
+      >
+        pressure
+      </div>
+    </div>
+  </div>
+</div>
+`;

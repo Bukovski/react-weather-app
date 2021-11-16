@@ -45,9 +45,7 @@ const Search = (props) => {
             />
           </svg>
         </button>
-        {
-          children
-        }
+        { children }
       </div>
     </div>
   );

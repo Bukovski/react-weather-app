@@ -4,14 +4,14 @@ import themeColorList from "../utils/themeColorList.json";
 import useComponentVisible from "../hock-context/useComponentVisible";
 
 
-const ThemeSwitcher = (props) => {
+const ThemeSwitcher = () => {
 	const { theme, setTheme } = useContext(ThemeContext);
 	const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 	
 	
 	const toggleThemeList = () => setIsComponentVisible(!isComponentVisible);
 	
-	const handleChangeTheme = (themeObj) => (event) => {
+	const handleChangeTheme = (themeObj) => () => {
 		if (themeObj.theme !== theme) {
 			setTheme(themeObj.theme);
 		}

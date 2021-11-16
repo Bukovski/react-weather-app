@@ -31,12 +31,16 @@
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {
+    "coveralls": "^3.1.1",
     "node-sass": "^6.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:snapshot": "npm test -m",
+    "test:coverage": "CI=true npm test -- --env=jsdom --coverage",
+    "test:coveralls": "CI=true npm test -- --env=jsdom --coverage && coveralls < coverage/lcov.info",
     "eject": "react-scripts eject",
     "scss": "node-sass src/resources/sass/main.sass -o src/",
     "watch-scss": "node-sass --watch src/resources/sass/main.sass -o src/",
@@ -60,6 +64,27 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/reportWebVitals.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text",
+      "lcov"
     ]
   }
 }

@@ -3,7 +3,7 @@ import AnimatedNumber from "animated-number-react";
 
 const Detail = (props) => {
 	const { weatherDescription, weatherIcon, windSpeed, humidity, pressure } = props.data;
-	
+
 	const formatValue = (value) => value.toFixed(0);
 	
 	return (<div className="detail">
@@ -36,7 +36,8 @@ const Detail = (props) => {
 					/>
 					<span className="detail__measure">%</span>
 				</div>
-				<div className="detail__name">humidity</div></div>
+				<div className="detail__name">humidity</div>
+			</div>
 			
 			<div className="detail__indicator">
 				<div className="detail__info">

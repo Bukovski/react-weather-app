@@ -1,5 +1,6 @@
 # :umbrella: React Weather App 
 
+[![Coverage Status](https://coveralls.io/repos/github/Bukovski/react-weather-app/badge.svg?branch=main)](https://coveralls.io/github/Bukovski/react-weather-app?branch=main)
 
 A simple weather app that allows you to get current weather information, based on the city you are.
 
@@ -40,7 +41,7 @@ npm run start
 -  Publish files on GitHub [gh-pages](https://github.com/tschaub/gh-pages)
 -  Pop-up messages on the page. Used to show errors [vercel-toast](https://vercel-toast.vercel.app/)
 -  A simple animated number for React [animated-number-react](https://github.com/Leocardoso94/animated-number-react)
-
+- [coveralls](https://github.com/nickmerwin/node-coveralls) - coverage reporting of [coveralls.io](https://coveralls.io/) and add a cool coverage button
 
 ![weather-screen](./screenshots/default-theme.jpg)
 ![red-theme](./screenshots/red-theme.jpg)
