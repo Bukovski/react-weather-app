@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Component should render with valid data 1`] = `
+<div
+  class="search"
+>
+  <div
+    class="search__wrap"
+  >
+    <input
+      class="search__input"
+      placeholder="Search for a location"
+      role="search"
+      type="search"
+      value="Text from value"
+    />
+    <button
+      class="search__button"
+      type="submit"
+    >
+      <svg
+        class="search__icon"
+        fill="none"
+        height="24"
+        width="24"
+      >
+        <path
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </button>
+    Text Children
+  </div>
+</div>
+`;

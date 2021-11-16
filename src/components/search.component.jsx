@@ -9,7 +9,7 @@ const Search = (props) => {
     onClickButton = () => {},
     textValue,
   } = props;
-  
+
   
   return (
     <div className="search">

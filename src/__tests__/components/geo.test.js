@@ -10,10 +10,11 @@ const data = {
 
 describe("Geo Component", () => {
 	it('should render with valid data', () => {
-		render(<Geo data={ data }/>);
+		const { container } = render(<Geo data={ data }/>);
 		
 		expect(screen.getByText('Stakhanov')).toBeInTheDocument();
 		expect(screen.getByText('Sun, November 07')).toBeInTheDocument();
+		
+		expect(container.firstChild).toMatchSnapshot();
 	});
-
 });
