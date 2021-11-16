@@ -13,7 +13,11 @@ describe("Search Component", () => {
 		);
 		
 		expect(screen.getByText('Text Children')).toBeInTheDocument();
-		expect(screen.getByRole("search")).toHaveValue("Text from value")
+		expect(screen.getByRole("search")).toHaveValue("Text from value");
+		
+		userEvent.click(screen.getByRole("button"));
+		userEvent.type(screen.getByRole("search"), 'New');
+		fireEvent.focusOut(screen.getByRole("search"));
 		
 		expect(container.firstChild).toMatchSnapshot();
 	});

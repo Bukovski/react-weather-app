@@ -22,6 +22,7 @@ const ThemeSwitcher = () => {
 	return(
 		<div className="theme-switcher" ref={ ref }>
 			<span
+				data-testid='switcher-span'
 				className="theme-switcher__main"
 				onClick={ toggleThemeList }
 			/>

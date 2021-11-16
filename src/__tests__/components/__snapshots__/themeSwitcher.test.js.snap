@@ -1,70 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Temperature Component should render props 1`] = `
+exports[`ThemeSwitcher Component should render theme list 1`] = `
 <div
-  class="temperature"
+  class="theme-switcher"
 >
-  <div
-    class="temperature__deg"
+  <span
+    class="theme-switcher__main"
+    data-testid="switcher-span"
+  />
+  <ul
+    class="theme-switcher__dropdown theme-switcher__dropdown-hide"
   >
-    <span>
-      7
-    </span>
-  </div>
-  <div
-    class="temperature__wrap"
-  >
-    <div
-      class="temperature__mesure"
+    <li
+      class="theme-switcher__item"
     >
-      °C
-    </div>
-    <div
-      class="temperature__box"
+      <span
+        class="theme-switcher__toggle"
+        style="box-shadow: 0 0 5px rgba(29, 211, 176, 1); border: 2px solid rgba(31, 166, 157, 1); background: rgb(255, 255, 255);"
+      />
+    </li>
+    <li
+      class="theme-switcher__item"
     >
-      <div
-        class="temperature__max"
-      >
-        <span
-          class="temperature__mark"
-        >
-          ↑
-        </span>
-        <p
-          class="temperature__text"
-        >
-          <span>
-            8
-          </span>
-        </p>
-        <span
-          class="temperature__unit"
-        >
-          °C
-        </span>
-      </div>
-      <div
-        class="temperature__min"
-      >
-        <span
-          class="temperature__mark"
-        >
-          ↓
-        </span>
-        <p
-          class="temperature__text"
-        >
-          <span>
-            10
-          </span>
-        </p>
-        <span
-          class="temperature__unit"
-        >
-          °C
-        </span>
-      </div>
-    </div>
-  </div>
+      <span
+        class="theme-switcher__toggle"
+        style="box-shadow: 0 0 5px rgba(255, 159, 41, 1); border: 2px solid rgba(191, 59, 59, 1); background: rgb(245, 238, 215);"
+      />
+    </li>
+    <li
+      class="theme-switcher__item"
+    >
+      <span
+        class="theme-switcher__toggle"
+        style="box-shadow: 0 0 5px rgba(241, 241, 241, 1); border: 2px solid rgba(241, 241, 241, 1); background: rgb(13, 82, 84);"
+      />
+    </li>
+    <li
+      class="theme-switcher__item"
+    >
+      <span
+        class="theme-switcher__toggle"
+        style="box-shadow: 0 0 5px rgba(4, 80, 142, 1); border: 2px solid rgba(187, 13, 36, 1); background: rgb(253, 255, 252);"
+      />
+    </li>
+    <li
+      class="theme-switcher__item"
+    >
+      <span
+        class="theme-switcher__toggle"
+        style="box-shadow: 0 0 5px rgba(100, 131, 129, 1); border: 2px solid rgba(138, 203, 136, 1); background: rgb(228, 253, 225);"
+      />
+    </li>
+  </ul>
 </div>
 `;
