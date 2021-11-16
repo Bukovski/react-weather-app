@@ -4,7 +4,7 @@ import AnimatedNumber from "animated-number-react";
 
 const Temperature = (props) => {
 	const { actualTemperature, maxTemperature, minTemperature } = props.data;
-	
+
 	const formatValue = (value) => value.toFixed(0);
 	
 	return (<div className="temperature">
