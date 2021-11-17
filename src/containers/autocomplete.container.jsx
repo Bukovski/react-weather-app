@@ -5,7 +5,7 @@ import Search from "../components/search.component";
 // import fakeLocationSuggestion from "../utils/fakeLocationSuggestion.json";
 
 
-const API_KEY = process.env.REACT_APP_AUTOCOMPLETE_API_KEY || "";
+const API_KEY = process.env.REACT_APP_AUTOCOMPLETE_API_KEY;
 const MAX_RESULT = 20;
 
 const AutocompleteContainer = (props) => {
@@ -38,7 +38,6 @@ const AutocompleteContainer = (props) => {
 				
 				const res = await fetcher(URL);
 				const suggestionsCollection = res.suggestions;
-				
 				const suggestionsFilter = _cityFilter(suggestionsCollection);
 				
 				if (suggestionsFilter) {
@@ -62,7 +61,6 @@ const AutocompleteContainer = (props) => {
 		
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ textValue ]);
-	
 	
 	const _cityFilter = (suggestionArr) => {
 		if (suggestionArr) {
@@ -95,13 +93,13 @@ const AutocompleteContainer = (props) => {
 	
 	const handleChangeValue = (event) => {
 		const textValue = event.target.value;
-		
+
 		setSuggestions(cities);
 		setTextValue(textValue);
 	}
 	
 	const handleSuggestClick = event => {
-		const textClick = event.target.innerText;
+		const textClick = event.target.textContent;
 		
 		setTextValue(textClick);
 		setSuggestions([]);
@@ -149,7 +147,6 @@ const AutocompleteContainer = (props) => {
 		</li>
 	};
 	
-	
 	return (
 		<Fragment>
 			<Search
@@ -162,6 +159,7 @@ const AutocompleteContainer = (props) => {
 				{
 					suggestions.length
 						? <ul
+							data-testid='suggestions-list'
 							className="search__autocomplete"
 				      onClick={ handleSuggestClick }
 						>

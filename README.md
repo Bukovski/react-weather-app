@@ -42,6 +42,7 @@ npm run start
 -  Pop-up messages on the page. Used to show errors [vercel-toast](https://vercel-toast.vercel.app/)
 -  A simple animated number for React [animated-number-react](https://github.com/Leocardoso94/animated-number-react)
 - [coveralls](https://github.com/nickmerwin/node-coveralls) - coverage reporting of [coveralls.io](https://coveralls.io/) and add a cool coverage button
+- [jest-fetch-mock](https://github.com/jefflau/jest-fetch-mock) - Mock http requests made using fetch
 
 ![weather-screen](./screenshots/default-theme.jpg)
 ![red-theme](./screenshots/red-theme.jpg)

@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.1.1",
+    "jest-fetch-mock": "^3.0.3",
     "node-sass": "^6.0.1"
   },
   "scripts": {
@@ -74,14 +75,6 @@
       "!<rootDir>/src/reportWebVitals.js",
       "!<rootDir>/src/components/diagram.component.jsx"
     ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    },
     "coverageReporters": [
       "html",
       "text",

@@ -2,12 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import { ThemeContext } from "../../hock-context/themeContext";
-import themeColorList from "../../utils/themeColorList.json";
 import ThemeSwitcher from "../../components/themeSwitcher.component";
-
-
-const theme = themeColorList[ 2 ];
-
 
 
 describe("ThemeSwitcher Component", () => {
