@@ -140,6 +140,31 @@ describe("Autocomplete Container", () => {
 		});
 	});
 	
+	it('hide list item when user click to outside component', async () => {
+		jest.useFakeTimers();
+		
+		render(<AutocompleteContainer/>);
+		
+		const inputSearch = screen.getByRole("search");
+		
+		await waitForLoadingToFinish(inputSearch)
+		
+		await act(async () => {
+			fireEvent.change(inputSearch, { target: { value: "Стах" } });
+		});
+		
+		expect(screen.getByTestId("suggestions-list")).toBeInTheDocument();
+		expect(screen.queryByTestId("suggestions-list")).toBeInTheDocument();
+		
+		fireEvent.focusOut(inputSearch);
+		
+		act(() => {
+			jest.runAllTimers()
+		});
+		
+		expect(screen.queryByTestId("suggestions-list")).not.toBeInTheDocument();
+	});
+	
 	it('Check call error message', async () => {
 		const mockFetchPromise = Promise.resolve({
 			json: () => Promise.reject(new Error('Data empty')),
