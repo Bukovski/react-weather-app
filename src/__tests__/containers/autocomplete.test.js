@@ -141,7 +141,6 @@ describe("Autocomplete Container", () => {
 	});
 	
 	it('hide list item when user click to outside component', async () => {
-		jest.useFakeTimers();
 		
 		render(<AutocompleteContainer/>);
 		
@@ -155,6 +154,8 @@ describe("Autocomplete Container", () => {
 		
 		expect(screen.getByTestId("suggestions-list")).toBeInTheDocument();
 		expect(screen.queryByTestId("suggestions-list")).toBeInTheDocument();
+		
+		jest.useFakeTimers();
 		
 		fireEvent.focusOut(inputSearch);
 		

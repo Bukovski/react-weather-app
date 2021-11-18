@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import { ThemeContext } from "../../hock-context/themeContext";
 import ThemeSwitcher from "../../components/themeSwitcher.component";
@@ -35,6 +35,28 @@ describe("ThemeSwitcher Component", () => {
 		
 		userEvent.click(screen.getAllByRole("listitem")[ 1 ].querySelector("span"));
 		expect(setTheme).toHaveBeenCalledTimes(1);
+		expect(screen.getByRole("list")).toHaveClass("theme-switcher__dropdown-hide");
+	});
+	
+	it('click outside', async () => {
+		const setTheme = jest.fn();
+		
+		render(
+			<ThemeContext.Provider value={{ theme: "dark", setTheme }}>
+				<ThemeSwitcher/>
+			</ThemeContext.Provider>
+		);
+		
+		expect(screen.getByRole("list")).toHaveClass("theme-switcher__dropdown-hide");
+		expect(setTheme).toHaveBeenCalledTimes(0);
+		
+		userEvent.click(screen.getByTestId("switcher-span"));
+		expect(screen.getByRole("list")).not.toHaveClass("theme-switcher__dropdown-hide");
+		
+		act(() => {
+			userEvent.click(document.body);
+		});
+		
 		expect(screen.getByRole("list")).toHaveClass("theme-switcher__dropdown-hide");
 	});
 	

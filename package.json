@@ -71,9 +71,11 @@
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.{js,jsx}",
       "!<rootDir>/node_modules/",
+      "!<rootDir>/src/libs/**/*.{js,jsx}",
       "!<rootDir>/src/index.js",
       "!<rootDir>/src/reportWebVitals.js",
-      "!<rootDir>/src/components/diagram.component.jsx"
+      "!<rootDir>/src/components/diagram.component.jsx",
+      "!<rootDir>/src/hock-context/themeContext.js"
     ],
     "coverageReporters": [
       "html",
