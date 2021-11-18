@@ -37,14 +37,14 @@ const AppContainer = () => {
     // _getFakeData();
   }, [])
   
-  const _getFakeData = () => {
+  /*const _getFakeData = () => {
     setTimeout(() => {
       setValues({
         ...values,
         ...fetchDataWeatherFake()
       });
     }, 1000)
-  }
+  }*/
   
   const _setDataWeather = async (dataWeather) => {
     const weatherData = await fetchDataWeather(dataWeather);
