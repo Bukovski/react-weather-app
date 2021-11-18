@@ -5,7 +5,7 @@ import Search from "../components/search.component";
 // import fakeLocationSuggestion from "../utils/fakeLocationSuggestion.json";
 
 
-const API_KEY = process.env.REACT_APP_AUTOCOMPLETE_API_KEY;
+const API_KEY = process.env.REACT_APP_AUTOCOMPLETE_API_KEY || "";
 const MAX_RESULT = 20;
 
 const AutocompleteContainer = (props) => {

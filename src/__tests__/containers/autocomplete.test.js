@@ -174,10 +174,14 @@ describe("Autocomplete Container", () => {
 		
 		fetch.resetMocks();
 		fetch.mockImplementation(() => mockFetchPromise);
+
+		jest.useFakeTimers();
 		
 		render(<AutocompleteContainer/>);
 		
 		const inputSearch = screen.getByRole("search");
+		
+		jest.runAllTimers()
 		
 		await waitForLoadingToFinish(inputSearch)
 		
