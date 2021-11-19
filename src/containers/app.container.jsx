@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import { fetchDataWeather, fetchDataWeatherFake } from '../utils/fetchDataWeather';
 import fetchDataLocation from "../utils/fetchDataLocation";
@@ -100,4 +100,3 @@ const AppContainer = () => {
 
 
 export default AppContainer;
-

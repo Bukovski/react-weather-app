@@ -3,13 +3,12 @@ import { render, screen } from '@testing-library/react';
 import Geo from "../../components/geo.component";
 
 
-const data = {
-	"cityName": "Stakhanov",
-	"date": "Sun, November 07"
-}
-
 describe("Geo Component", () => {
 	it('should render with valid data', () => {
+		const data = {
+			"cityName": "Stakhanov",
+			"date": "Sun, November 07"
+		}
 		const { container } = render(<Geo data={ data }/>);
 		
 		expect(screen.getByText('Stakhanov')).toBeInTheDocument();

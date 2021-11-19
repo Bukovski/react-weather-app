@@ -11,7 +11,7 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/";
 
 const fetchDataWeather = ({ latitude, longitude, cityName }) => {
 	let geoCoordinates = `&lat=${ latitude }&lon=${ longitude }`;
-	
+
 	if (cityName) {
 		geoCoordinates = `&q=${ encodeURIComponent(cityName) }`;
 	}
@@ -22,7 +22,7 @@ const fetchDataWeather = ({ latitude, longitude, cityName }) => {
 	const currentWeatherData = async () => {
 		try {
 			const getDataJson = await fetcher(currentWeatherUrl);
-			
+
 			return  {
 				actualTemperature: kelvinToC(getDataJson.main.temp).toFixed(0),
 				date: dateFromTimestamp(getDataJson.dt),
@@ -42,7 +42,7 @@ const fetchDataWeather = ({ latitude, longitude, cityName }) => {
 	const weatherForecastData = async () => {
 		try {
 			const getDataJson = await fetcher(weatherForecastUrl)
-			
+
 			const temperaturesForecast = [];
 			const temperaturesForecastLabels = [];
 			

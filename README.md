@@ -1,6 +1,8 @@
 # :umbrella: React Weather App 
 
+
 [![Coverage Status](https://coveralls.io/repos/github/Bukovski/react-weather-app/badge.svg?branch=main)](https://coveralls.io/github/Bukovski/react-weather-app?branch=main)
+
 
 A simple weather app that allows you to get current weather information, based on the city you are.
 

@@ -22,6 +22,11 @@ describe("Autocomplete Container", () => {
 		message[ "messageError" ] = (text) => messageErrorFn(text);
 	});
 	
+	afterAll(() => {
+		jest.clearAllMocks();
+		jest.clearAllTimers()
+	});
+	
 	beforeEach(() => {
 		const mockFetchPromise = Promise.resolve({
 			json: () => Promise.resolve({ suggestions: fakeLocationSuggestion }),

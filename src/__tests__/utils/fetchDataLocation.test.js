@@ -10,6 +10,10 @@ describe("fetchDataLocation Utils", () => {
 		message[ "messageError" ] = (text) => messageErrorFn(text);
 	});
 	
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+	
 	it('should return object with latitude & longitude', async () => {
 		const mockFetchPromise = Promise.resolve({
 			json: () => Promise.resolve({ loc: "990,880" }),
