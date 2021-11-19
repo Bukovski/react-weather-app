@@ -106,9 +106,9 @@ const AutocompleteContainer = (props) => {
 	}
 	
 	const handleClearField = () => {
-		setTimeout(() => {
+		// setTimeout(() => {
 			setSuggestions([]);
-		}, 200)
+		// }, 200)
 	}
 	
 	const handleKeyCatcher = (event) => {

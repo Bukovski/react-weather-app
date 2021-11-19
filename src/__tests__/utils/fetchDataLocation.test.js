@@ -15,27 +15,27 @@ describe("fetchDataLocation Utils", () => {
 	});
 	
 	it('should return object with latitude & longitude', async () => {
-		const mockFetchPromise = Promise.resolve({
-			json: () => Promise.resolve({ loc: "990,880" }),
+		const mockFetchLocation = Promise.resolve({
+			json: () => Promise.resolve({ loc: "38.6435,48.5682" }),
 			ok: () => true
 		});
 		
 		fetch.resetMocks();
-		fetch.mockImplementation(() => mockFetchPromise);
+		fetch.mockImplementation(() => mockFetchLocation);
 		
 		const fetchLocation = await fetchDataLocation();
 		
-		expect(fetchLocation).toEqual({ latitude: '990', longitude: '880' })
+		expect(fetchLocation).toEqual({ latitude: '38.6435', longitude: '48.5682' })
 	});
 	
 	it('should call error message', async () => {
-		const mockFetchPromise = Promise.resolve({
+		const mockFetchLocation = Promise.resolve({
 			json: () => Promise.reject(new Error('Data empty')),
 			ok: () => ({ status: 401 })
 		});
 		
 		fetch.resetMocks();
-		fetch.mockImplementation(() => mockFetchPromise);
+		fetch.mockImplementation(() => mockFetchLocation);
 		
 		await fetchDataLocation();
 		

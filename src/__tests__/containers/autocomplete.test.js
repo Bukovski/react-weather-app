@@ -24,7 +24,6 @@ describe("Autocomplete Container", () => {
 	
 	afterAll(() => {
 		jest.clearAllMocks();
-		jest.clearAllTimers()
 	});
 	
 	beforeEach(() => {
@@ -146,7 +145,6 @@ describe("Autocomplete Container", () => {
 	});
 	
 	it('hide list item when user click to outside component', async () => {
-		
 		render(<AutocompleteContainer/>);
 		
 		const inputSearch = screen.getByRole("search");
@@ -180,13 +178,13 @@ describe("Autocomplete Container", () => {
 		fetch.resetMocks();
 		fetch.mockImplementation(() => mockFetchPromise);
 
-		jest.useFakeTimers();
+		// jest.useFakeTimers();
 		
 		render(<AutocompleteContainer/>);
 		
 		const inputSearch = screen.getByRole("search");
 		
-		jest.runAllTimers()
+		// jest.runAllTimers()
 		
 		await waitForLoadingToFinish(inputSearch)
 		

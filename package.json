@@ -75,7 +75,8 @@
       "!<rootDir>/src/index.js",
       "!<rootDir>/src/reportWebVitals.js",
       "!<rootDir>/src/components/diagram.component.jsx",
-      "!<rootDir>/src/hock-context/themeContext.js"
+      "!<rootDir>/src/hock-context/themeContext.js",
+      "!<rootDir>/src/containers/app.container.jsx"
     ],
     "coverageReporters": [
       "html",
